@@ -106,17 +106,7 @@ int main(void)
 	SystemClock_Config();
 
 	/* USER CODE BEGIN SysInit */
-
-	/* USER CODE END SysInit */
-
-	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
-	MX_DMA_Init();
-	MX_ADC_Init();
-	MX_TIM3_Init();
-	MX_TIM16_Init();
-	MX_USART1_UART_Init();
-	/* USER CODE BEGIN 2 */
 
 	//Bit0
 	if (LL_GPIO_IsInputPinSet(A0_GPIO_Port, A0_Pin))
@@ -140,6 +130,17 @@ int main(void)
 	else {CLEAR_BIT(OwnAddr,1<<4);}
 	//Bit5
 	//SET_BIT(OwnAddr,1<<5);
+
+	/* USER CODE END SysInit */
+
+	/* Initialize all configured peripherals */
+	MX_GPIO_Init();
+	MX_DMA_Init();
+	MX_ADC_Init();
+	MX_TIM3_Init();
+	MX_TIM16_Init();
+	MX_USART1_UART_Init();
+	/* USER CODE BEGIN 2 */
 
 	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_2);
@@ -193,7 +194,7 @@ int main(void)
 			//обработка
 
 			// Запретить прерывания IRQ
-			__disable_irq ();
+			//__disable_irq ();
 
 			//aTxBuffer[4] = 0;
 			//aTxBuffer[5] = 0;
@@ -222,11 +223,11 @@ int main(void)
 			aTxBuffer[17] = (htim3.Instance->CCR1 >> 24) & 0xFF;
 			aTxBuffer[20] = en3;
 			aTxBuffer[21] = OwnAddr;
-			aTxBuffer[22] = 10; // Type
+			aTxBuffer[22] = 30; // Type
 			aTxBuffer[23] = 0;
 
 			// Разрешить прерывания IRQ
-			__enable_irq ();
+			//__enable_irq ();
 			HAL_Delay(1);
 			adc_Flag = 0;
 			if(HAL_ADC_Start_DMA(&hadc, (uint32_t*)&adc_buffer, ln_ch) != HAL_OK){
