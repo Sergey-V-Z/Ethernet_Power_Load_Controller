@@ -1,0 +1,14 @@
+Change Component Designator: OldDesignator=U1_ch1 NewDesignator=U3_ch1
+Change Component Designator: OldDesignator=U1_ch2 NewDesignator=U3_ch2
+Change Component Designator: OldDesignator=U1_ch3 NewDesignator=U3_ch3
+Change Component Designator: OldDesignator=U1_ch4 NewDesignator=U3_ch4
+Change Component Designator: OldDesignator=U1_ch5 NewDesignator=U3_ch5
+Change Component Designator: OldDesignator=U1_ch6 NewDesignator=U3_ch6
+Change Component Designator: OldDesignator=U2_ch1 NewDesignator=U4_ch1
+Change Component Designator: OldDesignator=U2_ch2 NewDesignator=U4_ch2
+Change Component Designator: OldDesignator=U2_ch3 NewDesignator=U4_ch3
+Change Component Designator: OldDesignator=U2_ch4 NewDesignator=U4_ch4
+Change Component Designator: OldDesignator=U2_ch5 NewDesignator=U4_ch5
+Change Component Designator: OldDesignator=U2_ch6 NewDesignator=U4_ch6
+Change Component Designator: OldDesignator=U3 NewDesignator=U1
+Change Component Designator: OldDesignator=U4 NewDesignator=U2

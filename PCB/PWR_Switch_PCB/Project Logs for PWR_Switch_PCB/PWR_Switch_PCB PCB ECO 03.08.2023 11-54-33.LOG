@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=A1 Pin=R21-1
+Removed Pin From Net: NetName=GND Pin=R21-2
+Removed Pin From Net: NetName=A2 Pin=R22-1
+Removed Pin From Net: NetName=GND Pin=R22-2
+Removed Pin From Net: NetName=A3 Pin=R23-1
+Removed Pin From Net: NetName=GND Pin=R23-2
+Removed Pin From Net: NetName=A4 Pin=R24-1
+Removed Pin From Net: NetName=GND Pin=R24-2
+Removed Member From Class: ClassName=PWR_Switch_PCB Member=R21
+Removed Member From Class: ClassName=PWR_Switch_PCB Member=R22
+Removed Member From Class: ClassName=PWR_Switch_PCB Member=R23
+Removed Member From Class: ClassName=PWR_Switch_PCB Member=R24

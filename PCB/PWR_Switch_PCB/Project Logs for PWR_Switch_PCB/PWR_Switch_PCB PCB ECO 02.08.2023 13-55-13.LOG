@@ -1,0 +1,39 @@
+Change Component Footprint: Designator=X4 Old Footprint=PLD-10RR1 New Footprint=PLD-10RR2
+Change Component Comment : Designator=R14 Old Comment=10K New Comment=1K
+Change Component Comment : Designator=R15 Old Comment=10K New Comment=1K
+Change Component Comment : Designator=R16 Old Comment=10K New Comment=1K
+Change Component Comment : Designator=R17 Old Comment=10K New Comment=1K
+Change Component Comment : Designator=R21 Old Comment=100K New Comment=4.7K
+Change Component Comment : Designator=R22 Old Comment=100K New Comment=4.7K
+Change Component Comment : Designator=R23 Old Comment=100K New Comment=4.7K
+Change Component Comment : Designator=R24 Old Comment=100K New Comment=4.7K
+Change component parameters: Designator = "R14" ("R14"); Footprint = "Resistor 0402"; UniqueID = "\FNKDVHPQ" ("\FNKDVHPQ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R15" ("R15"); Footprint = "Resistor 0402"; UniqueID = "\SDYNJEIR" ("\SDYNJEIR")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16" ("R16"); Footprint = "Resistor 0402"; UniqueID = "\RASCMAKJ" ("\RASCMAKJ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17" ("R17"); Footprint = "Resistor 0402"; UniqueID = "\ANMJYGJS" ("\ANMJYGJS")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R21" ("R21"); Footprint = "Resistor 0402"; UniqueID = "\HUVFIVZG" ("\HUVFIVZG")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "4.7K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R22" ("R22"); Footprint = "Resistor 0402"; UniqueID = "\RMQUHLAA" ("\RMQUHLAA")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "4.7K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R23" ("R23"); Footprint = "Resistor 0402"; UniqueID = "\HFNDIMMU" ("\HFNDIMMU")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "4.7K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R24" ("R24"); Footprint = "Resistor 0402"; UniqueID = "\BNWPVQXY" ("\BNWPVQXY")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "4.7K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "X3" ("X3"); Footprint = "PBD-10RR"; UniqueID = "\AJRLFCZC" ("\AJRLFCZC")
+Change component parameters (AddParameter): Name = "Package"; Value = "PBD-10R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "KLS1-208-2-10-R"; VariantName = "[No Variations]"
+Change component parameters: Designator = "X4" ("X4"); Footprint = "PLD-10RR1"; UniqueID = "\CKTQBSLM" ("\CKTQBSLM")
+Change component parameters (AddParameter): Name = "Package"; Value = "PLD-10R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "KLS1-207-2-10-R1"; VariantName = "[No Variations]"

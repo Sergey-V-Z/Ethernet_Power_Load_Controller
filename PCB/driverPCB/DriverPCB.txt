@@ -1,0 +1,30 @@
+Board Information Report
+Filename     : D:\Radio\Jobe\LED_Driver_ETH\PCBv2\driverPCB\DriverPCB.PcbDoc
+Date         : 05.07.2023
+Time         : 9:04:23
+Time Elapsed : 00:00:00
+
+Pad Solder Mask, Count
+    0.06mm, 74
+    0.1016mm, 586
+count : 2
+
+Pad Paste Mask, Count
+    0mm, 660
+count : 1
+
+Pad Pwr/Gnd Expansion, Count
+    0.508mm, 660
+count : 1
+
+Pad Relief Conductor Width, Count
+    0.254mm, 660
+count : 1
+
+Pad Relief Air Gap, Count
+    0.254mm, 660
+count : 1
+
+Pad Relief Entries, Count
+    4, 660
+count : 1

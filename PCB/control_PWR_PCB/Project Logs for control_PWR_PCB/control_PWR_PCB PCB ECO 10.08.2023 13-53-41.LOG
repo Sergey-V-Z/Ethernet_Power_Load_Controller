@@ -1,0 +1,62 @@
+Change Component Comment : Designator=C29 Old Comment=0603 18 пФ New Comment=0603 18 pF
+Change Component Comment : Designator=C34 Old Comment=0603 18 пФ New Comment=0603 18 pF
+Change Component Comment : Designator=R35 Old Comment=0603 220 Ом New Comment=0603 220 Om
+Change Component Comment : Designator=R42 Old Comment=0603 220 Ом New Comment=0603 220 Om
+Change Component Description : Designator=C5 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C6 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C7 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C8 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C10 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C11 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C14 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C16 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C19 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C20 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C21 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C22 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C23 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C24 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C25 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C27 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C28 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C30 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C31 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C32 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C33 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=D2 Old Description= New Description=DC-DC 5V
+Change Component Description : Designator=ISO1 Old Description= New Description=Digital isolator
+Change Component Description : Designator=L1 Old Description=6.5AµH Shielded Wirewound Inductor 6A 18mOhm Max Nonstandard New Description=68µH Shielded Wirewound Inductor 1.8A 18mOhm Max Nonstandard
+Change Component Description : Designator=IC1 Old Description=128M-bit Serial Flash Memory with uniform 4KB sectors and Dual/Quad SPI and QPI New Description=Serial Flash Memory with uniform 4KB sectors and Dual/Quad SPI and QPI
+Change Component Description : Designator=C35 Old Description=470AµF 35V Aluminum Electrolytic Capacitors Radial, Can - SMD 80mOhm @ 100kHz 2000 Hrs @ 105A°C New Description=470µF 35V Aluminum Electrolytic Capacitors Radial, Can - SMD 80mOhm @ 100kHz 2000 Hrs @ 105°C
+Change Component Description : Designator=C36 Old Description=470AµF 35V Aluminum Electrolytic Capacitors Radial, Can - SMD 80mOhm @ 100kHz 2000 Hrs @ 105A°C New Description=470µF 35V Aluminum Electrolytic Capacitors Radial, Can - SMD 80mOhm @ 100kHz 2000 Hrs @ 105°C
+Change Component Description : Designator=VR1 Old Description=800-mA 15-V linear voltage regulator New Description=800-mA 3.3-V linear voltage regulator
+Change Component Description : Designator=U1 Old Description=ARMA® CortexA®-M4 STM32F3 Microcontroller IC 32-Bit 72MHz 100-LQFP (14x14) New Description=STM32F407VE Microcontroller IC 32-Bit 100-LQFP (14x14)
+Change Component Description : Designator=C2 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C3 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C12 Old Description=SMD C0603 New Description=Ceramic Capacitor SMD C0603
+Change Component Description : Designator=C13 Old Description=SMD C0603 New Description=Ceramic Capacitor SMD C0603
+Change Component Description : Designator=C15 Old Description=Керамическтй конденсатор SMD C0603 New Description=Ceramic Capacitor SMD 0603
+Change Component Description : Designator=C17 Old Description=Керамическтй конденсатор SMD C0603 New Description=Ceramic Capacitor SMD 0603
+Change Component Description : Designator=C29 Old Description=Керамическтй конденсатор SMD C0603 New Description=Ceramic Capacitor SMD C0603
+Change Component Description : Designator=C34 Old Description=Керамическтй конденсатор SMD C0603 New Description=Ceramic Capacitor SMD C0603
+Change Component Description : Designator=R34 Old Description=Резистор New Description=Resistor
+Change component parameters: Designator = "C29" ("C29"); Footprint = "CAPCHIP0603"; UniqueID = "\LWLVVFUL" ("\LWLVVFUL")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 18 pF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C34" ("C34"); Footprint = "CAPCHIP0603"; UniqueID = "\QGXEYEHU" ("\QGXEYEHU")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 18 pF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R35" ("R35"); Footprint = "RESCHIP0603"; UniqueID = "\PAFWLXMI" ("\PAFWLXMI")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PWR"; Value = "Value"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 220 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R42" ("R42"); Footprint = "RESCHIP0603"; UniqueID = "\YWXQRNLJ" ("\YWXQRNLJ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PWR"; Value = "Value"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 220 Om"; VariantName = "[No Variations]"

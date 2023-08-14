@@ -1,0 +1,104 @@
+Change Component Comment : Designator=R39 Old Comment=510R New Comment=0603 510R
+Change Component Comment : Designator=C19 Old Comment=0603 0.001uF New Comment=0603 0.1uF
+Change Component Comment : Designator=L1 Old Comment=SRR1208-6R5ML New Comment=SRR1208-680Y
+Change Component Description : Designator=R1 Old Description= New Description=Resistor
+Change Component Description : Designator=R2 Old Description= New Description=Resistor
+Change Component Description : Designator=R3 Old Description= New Description=Resistor
+Change Component Description : Designator=R4 Old Description= New Description=Resistor
+Change Component Description : Designator=R5 Old Description= New Description=Resistor
+Change Component Description : Designator=R6 Old Description= New Description=Resistor
+Change Component Description : Designator=R7 Old Description= New Description=Resistor
+Change Component Description : Designator=R8 Old Description= New Description=Resistor
+Change Component Description : Designator=R9 Old Description= New Description=Resistor
+Change Component Description : Designator=R10 Old Description= New Description=Resistor
+Change Component Description : Designator=C12 Old Description=Керамическтй конденсатор SMD C0603 New Description=SMD C0603
+Change Component Description : Designator=C13 Old Description=Керамическтй конденсатор SMD C0603 New Description=SMD C0603
+Change Component Description : Designator=R26 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R27 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R28 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R29 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R30 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R31 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R32 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R33 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R36 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R37 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R38 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R40 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R41 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R43 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R44 Old Description=Резистор New Description=Resistor
+Change Component Description : Designator=R35 Old Description=Резистор SMD R0603 New Description=Resistor
+Change Component Description : Designator=R42 Old Description=Резистор SMD R0603 New Description=Resistor
+Change component parameters: Designator = "R9" ("R9"); Footprint = "Resistor 0603"; UniqueID = "\NZHCJTJF" ("\NZHCJTJF")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 3k"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R10" ("R10"); Footprint = "Resistor 0603"; UniqueID = "\JLOUULCR" ("\JLOUULCR")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 1k"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R26" ("R26"); Footprint = "RESCHIP0603"; UniqueID = "\BTAMPXJW" ("\BTAMPXJW")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power_W"; Value = "{Power_W}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Resistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 50R"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R27" ("R27"); Footprint = "RESCHIP0603"; UniqueID = "\CLVQIOOQ" ("\CLVQIOOQ")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power_W"; Value = "{Power_W}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Resistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 50R"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R28" ("R28"); Footprint = "RESCHIP0603"; UniqueID = "\GSENABII" ("\GSENABII")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power_W"; Value = "{Power_W}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Resistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 50R"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R29" ("R29"); Footprint = "RESCHIP0603"; UniqueID = "\AKQQDCDP" ("\AKQQDCDP")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power_W"; Value = "{Power_W}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Resistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 50R"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C19" ("C19"); Footprint = "CAPACITOR 0603"; UniqueID = "\ZPEYGKQM" ("\ZPEYGKQM")
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "DG2" ("DG2"); Footprint = "15EDGVC-3.5-16P"; UniqueID = "\DMBLLKDE" ("\DMBLLKDE")
+Change component parameters (AddParameter): Name = "value"; Value = "15EDGVC-3.5-2P"; VariantName = "[No Variations]"
+Change component parameters: Designator = "L1" ("L1"); Footprint = "SRR1208"; UniqueID = "\ZZGAMDMQ" ("\ZZGAMDMQ")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Bourns"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SRR1208-6R5ML"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "Nonstandard Bourns"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/SRR1208-6R5ML/Bourns/view-part/353452/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "SRR1208-680Y"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R39" ("R39"); Footprint = "RESCHIP0603"; UniqueID = "\VUJFLJRR" ("\VUJFLJRR")
+Change component parameters (AddParameter): Name = "CompType"; Value = "Resistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 510R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage"; Value = ""; VariantName = "[No Variations]"

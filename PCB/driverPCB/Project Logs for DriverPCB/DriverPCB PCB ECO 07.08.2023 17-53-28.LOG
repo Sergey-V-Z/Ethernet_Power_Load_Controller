@@ -1,0 +1,180 @@
+Removed Pin From Net: NetName=gnd_ch1 Pin=Q1_ch1-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=Q1_ch2-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=Q1_ch3-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=Q1_ch4-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=Q1_ch5-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=Q1_ch6-2
+Removed Pin From Net: NetName=Vin_ch1 Pin=R13_ch1-1
+Removed Pin From Net: NetName=Vin_ch1 Pin=R13_ch2-1
+Removed Pin From Net: NetName=Vin_ch1 Pin=R13_ch3-1
+Removed Pin From Net: NetName=Vin_ch1 Pin=R13_ch4-1
+Removed Pin From Net: NetName=Vin_ch1 Pin=R13_ch5-1
+Removed Pin From Net: NetName=Vin_ch1 Pin=R13_ch6-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R15_ch1-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R15_ch2-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R15_ch3-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R15_ch4-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R15_ch5-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R15_ch6-1
+Removed Pin From Net: NetName=Vin_ch1 Pin=R18-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R21-1
+Removed Pin From Net: NetName=M1_A0_PWM_CH4 Pin=R30-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R30-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=R31-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=R32-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=R33-2
+Removed Pin From Net: NetName=+3.3v Pin=R36-1
+Removed Pin From Net: NetName=+3.3v Pin=R37-1
+Removed Pin From Net: NetName=+3.3v Pin=R38-1
+Removed Pin From Net: NetName=+3.3v Pin=R39-1
+Removed Pin From Net: NetName=M2_A0_PWM_CH4 Pin=R41-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=R41-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=R42-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=R43-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=R44-2
+Removed Pin From Net: NetName=M1_A0_PWM_CH4 Pin=S1-1
+Removed Pin From Net: NetName=M2_A0_PWM_CH4 Pin=S2-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=VT1_ch1-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=VT1_ch2-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=VT1_ch3-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=VT1_ch4-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=VT1_ch5-2
+Removed Pin From Net: NetName=gnd_ch1 Pin=VT1_ch6-2
+Removed Member From Class: ClassName=ch1 Member=Q1_ch1
+Removed Member From Class: ClassName=ch2 Member=Q1_ch2
+Removed Member From Class: ClassName=ch3 Member=Q1_ch3
+Removed Member From Class: ClassName=ch4 Member=Q1_ch4
+Removed Member From Class: ClassName=ch5 Member=Q1_ch5
+Removed Member From Class: ClassName=ch6 Member=Q1_ch6
+Removed Member From Class: ClassName=ch1 Member=R10_ch1
+Removed Member From Class: ClassName=ch2 Member=R10_ch2
+Removed Member From Class: ClassName=ch3 Member=R10_ch3
+Removed Member From Class: ClassName=ch4 Member=R10_ch4
+Removed Member From Class: ClassName=ch5 Member=R10_ch5
+Removed Member From Class: ClassName=ch6 Member=R10_ch6
+Removed Member From Class: ClassName=ch1 Member=R11_ch1
+Removed Member From Class: ClassName=ch2 Member=R11_ch2
+Removed Member From Class: ClassName=ch3 Member=R11_ch3
+Removed Member From Class: ClassName=ch4 Member=R11_ch4
+Removed Member From Class: ClassName=ch5 Member=R11_ch5
+Removed Member From Class: ClassName=ch6 Member=R11_ch6
+Removed Member From Class: ClassName=ch1 Member=R12_ch1
+Removed Member From Class: ClassName=ch2 Member=R12_ch2
+Removed Member From Class: ClassName=ch3 Member=R12_ch3
+Removed Member From Class: ClassName=ch4 Member=R12_ch4
+Removed Member From Class: ClassName=ch5 Member=R12_ch5
+Removed Member From Class: ClassName=ch6 Member=R12_ch6
+Removed Member From Class: ClassName=ch1 Member=R13_ch1
+Removed Member From Class: ClassName=ch2 Member=R13_ch2
+Removed Member From Class: ClassName=ch3 Member=R13_ch3
+Removed Member From Class: ClassName=ch4 Member=R13_ch4
+Removed Member From Class: ClassName=ch5 Member=R13_ch5
+Removed Member From Class: ClassName=ch6 Member=R13_ch6
+Removed Member From Class: ClassName=ch1 Member=R15_ch1
+Removed Member From Class: ClassName=ch2 Member=R15_ch2
+Removed Member From Class: ClassName=ch3 Member=R15_ch3
+Removed Member From Class: ClassName=ch4 Member=R15_ch4
+Removed Member From Class: ClassName=ch5 Member=R15_ch5
+Removed Member From Class: ClassName=ch6 Member=R15_ch6
+Removed Member From Class: ClassName=DriverPCB Member=R18
+Removed Member From Class: ClassName=DriverPCB Member=R19
+Removed Member From Class: ClassName=DriverPCB Member=R20
+Removed Member From Class: ClassName=DriverPCB Member=R21
+Removed Member From Class: ClassName=DriverPCB Member=R30
+Removed Member From Class: ClassName=DriverPCB Member=R31
+Removed Member From Class: ClassName=DriverPCB Member=R32
+Removed Member From Class: ClassName=DriverPCB Member=R33
+Removed Member From Class: ClassName=DriverPCB Member=R36
+Removed Member From Class: ClassName=DriverPCB Member=R37
+Removed Member From Class: ClassName=DriverPCB Member=R38
+Removed Member From Class: ClassName=DriverPCB Member=R39
+Removed Member From Class: ClassName=DriverPCB Member=R41
+Removed Member From Class: ClassName=DriverPCB Member=R42
+Removed Member From Class: ClassName=DriverPCB Member=R43
+Removed Member From Class: ClassName=DriverPCB Member=R44
+Removed Member From Class: ClassName=DriverPCB Member=S2
+Removed Member From Class: ClassName=ch1 Member=VT1_ch1
+Removed Member From Class: ClassName=ch2 Member=VT1_ch2
+Removed Member From Class: ClassName=ch3 Member=VT1_ch3
+Removed Member From Class: ClassName=ch4 Member=VT1_ch4
+Removed Member From Class: ClassName=ch5 Member=VT1_ch5
+Removed Member From Class: ClassName=ch6 Member=VT1_ch6
+Added Component: Designator=R10(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R11(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=R12(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=R13(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=M1_A0_PWM_CH4 Pin=R10-1
+Added Pin To Net: NetName=+3.3v Pin=R10-2
+Added Pin To Net: NetName=gnd_ch1 Pin=R11-1
+Added Pin To Net: NetName=M1_A0_PWM_CH4 Pin=R11-2
+Added Pin To Net: NetName=+3.3v Pin=R12-2
+Added Pin To Net: NetName=gnd_ch1 Pin=R13-1
+Change Net Name : Old Net Name=I2C_CLK New Net Name=TX_BUS
+Change Net Name : Old Net Name=I2C_DATA New Net Name=RX_BUS
+Added Pin To Net: NetName=A1 Pin=S1-1
+Added Pin To Net: NetName=A1 Pin=U3-3
+Added Pin To Net: NetName=A1 Pin=U4-3
+Added Net: Name=A1
+Added Pin To Net: NetName=A2 Pin=S1-2
+Added Pin To Net: NetName=A2 Pin=U3-9
+Added Pin To Net: NetName=A2 Pin=U4-9
+Added Net: Name=A2
+Added Pin To Net: NetName=A3 Pin=S1-3
+Added Pin To Net: NetName=A3 Pin=U3-10
+Added Pin To Net: NetName=A3 Pin=U4-10
+Added Net: Name=A3
+Added Pin To Net: NetName=A4 Pin=S1-4
+Added Pin To Net: NetName=A4 Pin=U3-11
+Added Pin To Net: NetName=A4 Pin=U4-11
+Added Net: Name=A4
+Added Pin To Net: NetName=M1_LED Pin=R29-1
+Added Pin To Net: NetName=M1_LED Pin=U3-2
+Added Net: Name=M1_LED
+Added Pin To Net: NetName=M1_PWM_CH1 Pin=R3_ch1-2
+Added Pin To Net: NetName=M1_PWM_CH1 Pin=U3-12
+Added Net: Name=M1_PWM_CH1
+Added Pin To Net: NetName=M1_PWM_CH2 Pin=R3_ch2-2
+Added Pin To Net: NetName=M1_PWM_CH2 Pin=U3-13
+Added Net: Name=M1_PWM_CH2
+Added Pin To Net: NetName=M2_A0 Pin=R12-1
+Added Pin To Net: NetName=M2_A0 Pin=R13-2
+Added Net: Name=M2_A0
+Added Pin To Net: NetName=M2_LED Pin=R40-1
+Added Pin To Net: NetName=M2_LED Pin=U4-2
+Added Net: Name=M2_LED
+Added Pin To Net: NetName=M2_PWM_CH1 Pin=R3_ch4-2
+Added Pin To Net: NetName=M2_PWM_CH1 Pin=U4-12
+Added Net: Name=M2_PWM_CH1
+Added Pin To Net: NetName=M2_PWM_CH2 Pin=R3_ch5-2
+Added Pin To Net: NetName=M2_PWM_CH2 Pin=U4-13
+Added Net: Name=M2_PWM_CH2
+Added Pin To Net: NetName=NetR2_ch1_1 Pin=R2_ch1-1
+Added Pin To Net: NetName=NetR2_ch1_1 Pin=U1_ch1-10
+Added Net: Name=NetR2_ch1_1
+Added Pin To Net: NetName=NetR2_ch2_1 Pin=R2_ch2-1
+Added Pin To Net: NetName=NetR2_ch2_1 Pin=U1_ch2-10
+Added Net: Name=NetR2_ch2_1
+Added Pin To Net: NetName=NetR2_ch3_1 Pin=R2_ch3-1
+Added Pin To Net: NetName=NetR2_ch3_1 Pin=U1_ch3-10
+Added Net: Name=NetR2_ch3_1
+Added Pin To Net: NetName=NetR2_ch4_1 Pin=R2_ch4-1
+Added Pin To Net: NetName=NetR2_ch4_1 Pin=U1_ch4-10
+Added Net: Name=NetR2_ch4_1
+Added Pin To Net: NetName=NetR2_ch5_1 Pin=R2_ch5-1
+Added Pin To Net: NetName=NetR2_ch5_1 Pin=U1_ch5-10
+Added Net: Name=NetR2_ch5_1
+Added Pin To Net: NetName=NetR2_ch6_1 Pin=R2_ch6-1
+Added Pin To Net: NetName=NetR2_ch6_1 Pin=U1_ch6-10
+Added Net: Name=NetR2_ch6_1
+Added Member To Class: ClassName=DriverPCB Member=Component R10 NC
+Added Member To Class: ClassName=DriverPCB Member=Component R11 10K
+Added Member To Class: ClassName=DriverPCB Member=Component R12 10K
+Added Member To Class: ClassName=DriverPCB Member=Component R13 NC

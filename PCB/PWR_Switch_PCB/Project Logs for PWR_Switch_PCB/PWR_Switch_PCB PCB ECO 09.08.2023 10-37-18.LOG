@@ -1,0 +1,2 @@
+Change Net Name : Old Net Name=I2C_CLK New Net Name=TX_BUS
+Change Net Name : Old Net Name=I2C_DATA New Net Name=RX_BUS

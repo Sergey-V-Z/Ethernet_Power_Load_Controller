@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=NetR22_2 Pin=VD1-A
+Removed Pin From Net: NetName=+24v Pin=VD1-K
+Added Pin To Net: NetName=+24v Pin=VD1-A
+Added Pin To Net: NetName=NetR22_2 Pin=VD1-K

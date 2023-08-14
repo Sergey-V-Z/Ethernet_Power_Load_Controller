@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=X4 Old Footprint=PLD-10RR1 New Footprint=PLD-10RR2
+Change component parameters: Designator = "X3" ("X3"); Footprint = "PBD-10RR"; UniqueID = "\MNMQQLEW" ("\MNMQQLEW")
+Change component parameters (AddParameter): Name = "Package"; Value = "PBD-10R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "KLS1-208-2-10-R"; VariantName = "[No Variations]"
+Change component parameters: Designator = "X4" ("X4"); Footprint = "PLD-10RR1"; UniqueID = "\SHSNKXPP" ("\SHSNKXPP")
+Change component parameters (AddParameter): Name = "Package"; Value = "PLD-10R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "KLS1-207-2-10-R1"; VariantName = "[No Variations]"

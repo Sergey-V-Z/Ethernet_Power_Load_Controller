@@ -1,0 +1,56 @@
+Removed Pin From Net: NetName=+24v Pin=DG1-1
+Removed Pin From Net: NetName=GND Pin=X3-4
+Removed Pin From Net: NetName=GND Pin=X3-8
+Removed Pin From Net: NetName=GND Pin=X4-4
+Removed Pin From Net: NetName=GND Pin=X4-8
+Added Component: Designator=D15(DIOM5226X240N)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/B340A-13/Diodes+Inc./view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Diodes Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "B340A-13"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "DO-214 Diodes Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/B340A-13/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/B340A-13/Diodes+Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "B340A-13"; VariantName = "[No Variations]"
+Added Component: Designator=R29(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R30(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R56(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R57(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+24v Pin=D15-C
+Added Pin To Net: NetName=M1_NRST Pin=R29-2
+Added Pin To Net: NetName=M2_NRST Pin=R30-2
+Added Pin To Net: NetName=M1_BOOT Pin=R6-1
+Added Pin To Net: NetName=M1_BOOT Pin=R56-2
+Added Pin To Net: NetName=M1_BOOT Pin=U1-1
+Added Net: Name=M1_BOOT
+Added Pin To Net: NetName=M2_BOOT Pin=R4-1
+Added Pin To Net: NetName=M2_BOOT Pin=R57-2
+Added Pin To Net: NetName=M2_BOOT Pin=U2-1
+Added Net: Name=M2_BOOT
+Added Pin To Net: NetName=NetD15_A Pin=D15-A
+Added Pin To Net: NetName=NetD15_A Pin=DG1-1
+Added Net: Name=NetD15_A
+Added Pin To Net: NetName=NetR29_1 Pin=R29-1
+Added Pin To Net: NetName=NetR29_1 Pin=R30-1
+Added Pin To Net: NetName=NetR29_1 Pin=X3-8
+Added Pin To Net: NetName=NetR29_1 Pin=X4-4
+Added Net: Name=NetR29_1
+Added Pin To Net: NetName=NetR56_1 Pin=R56-1
+Added Pin To Net: NetName=NetR56_1 Pin=R57-1
+Added Pin To Net: NetName=NetR56_1 Pin=X3-4
+Added Pin To Net: NetName=NetR56_1 Pin=X4-8
+Added Net: Name=NetR56_1
+Added Member To Class: ClassName=PWR_Switch_PCB Member=Component D15 B340A-13
+Added Member To Class: ClassName=PWR_Switch_PCB Member=Component R29 NC
+Added Member To Class: ClassName=PWR_Switch_PCB Member=Component R30 NC
+Added Member To Class: ClassName=PWR_Switch_PCB Member=Component R56 NC
+Added Member To Class: ClassName=PWR_Switch_PCB Member=Component R57 NC

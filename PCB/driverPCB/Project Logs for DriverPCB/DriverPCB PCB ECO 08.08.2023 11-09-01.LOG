@@ -1,0 +1,48 @@
+Change Component Comment : Designator=R9_ch1 Old Comment=1 New Comment=NC
+Change Component Comment : Designator=R9_ch2 Old Comment=1 New Comment=NC
+Change Component Comment : Designator=R9_ch3 Old Comment=1 New Comment=NC
+Change Component Comment : Designator=R9_ch4 Old Comment=1 New Comment=NC
+Change Component Comment : Designator=R9_ch5 Old Comment=1 New Comment=NC
+Change Component Comment : Designator=R9_ch6 Old Comment=1 New Comment=NC
+Change Component Comment : Designator=R6_ch1 Old Comment=NC New Comment=1
+Change Component Comment : Designator=R6_ch2 Old Comment=NC New Comment=1
+Change Component Comment : Designator=R6_ch3 Old Comment=NC New Comment=1
+Change Component Comment : Designator=R6_ch4 Old Comment=NC New Comment=1
+Change Component Comment : Designator=R6_ch5 Old Comment=NC New Comment=1
+Change Component Comment : Designator=R6_ch6 Old Comment=NC New Comment=1
+Change component parameters: Designator = "R6_ch1" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\ZEHSHGFD\JSAGWEXM" ("\ZEHSHGFD\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch2" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\SPXHXCVY\JSAGWEXM" ("\SPXHXCVY\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch3" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\ZPDDUSWC\JSAGWEXM" ("\ZPDDUSWC\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch4" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\SKNDOLQQ\JSAGWEXM" ("\SKNDOLQQ\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch5" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\LLXUXYEH\JSAGWEXM" ("\LLXUXYEH\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch6" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\PNRTKVRS\JSAGWEXM" ("\PNRTKVRS\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch1" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\ZEHSHGFD\XYSFDHTA" ("\ZEHSHGFD\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch2" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\SPXHXCVY\XYSFDHTA" ("\SPXHXCVY\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch3" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\ZPDDUSWC\XYSFDHTA" ("\ZPDDUSWC\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch4" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\SKNDOLQQ\XYSFDHTA" ("\SKNDOLQQ\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch5" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\LLXUXYEH\XYSFDHTA" ("\LLXUXYEH\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch6" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\PNRTKVRS\XYSFDHTA" ("\PNRTKVRS\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"

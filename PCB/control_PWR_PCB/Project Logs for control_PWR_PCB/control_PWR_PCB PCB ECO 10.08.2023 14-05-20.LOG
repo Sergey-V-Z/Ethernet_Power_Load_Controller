@@ -1,0 +1,21 @@
+Change Component Comment : Designator=VD1 Old Comment= New Comment=0805 Green
+Change Component Comment : Designator=VD2 Old Comment= New Comment=0805 Green
+Change Component Comment : Designator=VD3 Old Comment= New Comment=0805 Green
+Change Component Comment : Designator=VD4 Old Comment= New Comment=0805 Green
+Change Component Description : Designator=VD1 Old Description= New Description=0805 Green
+Change Component Description : Designator=VD2 Old Description= New Description=0805 Green
+Change Component Description : Designator=VD3 Old Description= New Description=0805 Green
+Change Component Description : Designator=VD4 Old Description= New Description=0805 Green
+Change Component Description : Designator=VD5 Old Description= New Description=0805 Green
+Change Component Description : Designator=VD6 Old Description= New Description=0805 Green
+Change Component Description : Designator=C18 Old Description= New Description=Ceramic Capacitor SMD
+Change component parameters: Designator = "VD1" ("VD1"); Footprint = "0805-"; UniqueID = "\OQZWTBJR" ("\OQZWTBJR")
+Change component parameters (AddParameter): Name = "CompType"; Value = "LED"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0805 Green"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage"; Value = ""; VariantName = "[No Variations]"

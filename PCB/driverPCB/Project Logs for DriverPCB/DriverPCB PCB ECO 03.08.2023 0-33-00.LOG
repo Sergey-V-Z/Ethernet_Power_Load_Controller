@@ -1,0 +1,40 @@
+Removed Pin From Net: NetName=gnd_ch1 Pin=X3-4
+Removed Pin From Net: NetName=gnd_ch1 Pin=X3-8
+Removed Pin From Net: NetName=gnd_ch1 Pin=X4-4
+Removed Pin From Net: NetName=gnd_ch1 Pin=X4-8
+Added Component: Designator=R45(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R46(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R47(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R48(Resistor 0402)
+Add component (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=M1_NRST Pin=R45-2
+Added Pin To Net: NetName=M2_NRST Pin=R46-2
+Added Pin To Net: NetName=M1_BOOT Pin=R24-1
+Added Pin To Net: NetName=M1_BOOT Pin=R47-2
+Added Pin To Net: NetName=M1_BOOT Pin=U3-1
+Added Net: Name=M1_BOOT
+Added Pin To Net: NetName=M2_BOOT Pin=R35-1
+Added Pin To Net: NetName=M2_BOOT Pin=R48-2
+Added Pin To Net: NetName=M2_BOOT Pin=U4-1
+Added Net: Name=M2_BOOT
+Added Pin To Net: NetName=NetR45_1 Pin=R45-1
+Added Pin To Net: NetName=NetR45_1 Pin=R46-1
+Added Pin To Net: NetName=NetR45_1 Pin=X3-8
+Added Pin To Net: NetName=NetR45_1 Pin=X4-4
+Added Net: Name=NetR45_1
+Added Pin To Net: NetName=NetR47_1 Pin=R47-1
+Added Pin To Net: NetName=NetR47_1 Pin=R48-1
+Added Pin To Net: NetName=NetR47_1 Pin=X3-4
+Added Pin To Net: NetName=NetR47_1 Pin=X4-8
+Added Net: Name=NetR47_1
+Added Member To Class: ClassName=DriverPCB Member=Component R45 NC
+Added Member To Class: ClassName=DriverPCB Member=Component R46 NC
+Added Member To Class: ClassName=DriverPCB Member=Component R47 NC
+Added Member To Class: ClassName=DriverPCB Member=Component R48 NC

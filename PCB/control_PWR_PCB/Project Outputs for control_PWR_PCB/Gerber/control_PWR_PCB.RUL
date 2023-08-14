@@ -1,0 +1,7 @@
+DRC Rules Export File for PCB: D:\Radio\Jobe\PWR_Switch_ETH\PCB\control_PWR_PCB\control_PWR_PCB.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_2|Scope=Board|Minimum=7.87
+RuleKind=Clearance|RuleName=Clearance_1|Scope=Board|Minimum=39.37
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.87
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

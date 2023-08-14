@@ -1,0 +1,11 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [control_PWR_PCB.PcbDoc]
+   Generated File[Pick Place for control_PWR_PCB.txt]
+   Generated File[Pick Place for control_PWR_PCB.csv]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 14:07:09 On 10.08.2023
