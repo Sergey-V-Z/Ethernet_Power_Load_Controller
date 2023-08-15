@@ -1,0 +1,818 @@
+Removed Pin From Net: NetName=Vin_ch1 Pin=DG1-1
+Removed Pin From Net: NetName=gnd_ch1 Pin=DG1-2
+Removed Pin From Net: NetName=NetC5_ch1_1 Pin=DG1-3
+Removed Pin From Net: NetName=NetC5_ch1_2 Pin=DG1-4
+Removed Pin From Net: NetName=NetC5_ch2_1 Pin=DG1-5
+Removed Pin From Net: NetName=NetC5_ch2_2 Pin=DG1-6
+Removed Pin From Net: NetName=NetC5_ch3_1 Pin=DG1-7
+Removed Pin From Net: NetName=NetC5_ch3_2 Pin=DG1-8
+Removed Pin From Net: NetName=NetC5_ch4_1 Pin=DG1-9
+Removed Pin From Net: NetName=NetC5_ch4_2 Pin=DG1-10
+Removed Pin From Net: NetName=NetC5_ch5_1 Pin=DG1-11
+Removed Pin From Net: NetName=NetC5_ch5_2 Pin=DG1-12
+Removed Pin From Net: NetName=NetC5_ch6_1 Pin=DG1-13
+Removed Pin From Net: NetName=NetC5_ch6_2 Pin=DG1-14
+Removed Pin From Net: NetName=Vin_ch1 Pin=DG1-15
+Removed Pin From Net: NetName=gnd_ch1 Pin=DG1-16
+Change Component Comment : Designator=C1_ch1 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C1_ch2 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C1_ch3 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C1_ch4 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C1_ch5 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C1_ch6 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C7_ch1 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C7_ch2 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C7_ch3 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C7_ch4 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C7_ch5 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=C7_ch6 Old Comment=0.1 uF New Comment=0603 0.1 uF
+Change Component Comment : Designator=R6_ch1 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R6_ch2 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R6_ch3 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R6_ch4 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R6_ch5 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R6_ch6 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R7_ch1 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R7_ch2 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R7_ch3 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R7_ch4 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R7_ch5 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R7_ch6 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R8_ch1 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R8_ch2 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R8_ch3 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R8_ch4 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R8_ch5 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R8_ch6 Old Comment=1 New Comment=1206 1 Om
+Change Component Comment : Designator=R1_ch1 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R1_ch2 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R1_ch3 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R1_ch4 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R1_ch5 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R1_ch6 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R4_ch1 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R4_ch2 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R4_ch3 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R4_ch4 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R4_ch5 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R4_ch6 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R14_ch1 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R14_ch2 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R14_ch3 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R14_ch4 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R14_ch5 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R14_ch6 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R16_ch1 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R16_ch2 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R16_ch3 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R16_ch4 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R16_ch5 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=R16_ch6 Old Comment=1K New Comment=0402 1K
+Change Component Comment : Designator=C2_ch1 Old Comment=1 uF New Comment=0603 1 uF
+Change Component Comment : Designator=C2_ch2 Old Comment=1 uF New Comment=0603 1 uF
+Change Component Comment : Designator=C2_ch3 Old Comment=1 uF New Comment=0603 1 uF
+Change Component Comment : Designator=C2_ch4 Old Comment=1 uF New Comment=0603 1 uF
+Change Component Comment : Designator=C2_ch5 Old Comment=1 uF New Comment=0603 1 uF
+Change Component Comment : Designator=C2_ch6 Old Comment=1 uF New Comment=0603 1 uF
+Change Component Comment : Designator=R3_ch1 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R3_ch2 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R3_ch3 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R3_ch4 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R3_ch5 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R3_ch6 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R17_ch1 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R17_ch2 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R17_ch3 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R17_ch4 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R17_ch5 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R17_ch6 Old Comment=10K New Comment=0402 10K
+Change Component Comment : Designator=R2_ch1 Old Comment=100K New Comment=0402 100K
+Change Component Comment : Designator=R2_ch2 Old Comment=100K New Comment=0402 100K
+Change Component Comment : Designator=R2_ch3 Old Comment=100K New Comment=0402 100K
+Change Component Comment : Designator=R2_ch4 Old Comment=100K New Comment=0402 100K
+Change Component Comment : Designator=R2_ch5 Old Comment=100K New Comment=0402 100K
+Change Component Comment : Designator=R2_ch6 Old Comment=100K New Comment=0402 100K
+Change Component Comment : Designator=C3_ch1 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C3_ch2 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C3_ch3 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C3_ch4 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C3_ch5 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C3_ch6 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C4_ch1 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C4_ch2 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C4_ch3 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C4_ch4 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C4_ch5 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C4_ch6 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C5_ch1 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C5_ch2 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C5_ch3 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C5_ch4 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C5_ch5 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C5_ch6 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C6_ch1 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C6_ch2 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C6_ch3 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C6_ch4 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C6_ch5 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=C6_ch6 Old Comment=Cap C New Comment=1812 4.7 uF
+Change Component Comment : Designator=R5_ch1 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R5_ch2 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R5_ch3 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R5_ch4 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R5_ch5 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R5_ch6 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R9_ch1 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R9_ch2 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R9_ch3 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R9_ch4 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R9_ch5 Old Comment=NC New Comment=1206 NC
+Change Component Comment : Designator=R9_ch6 Old Comment=NC New Comment=1206 NC
+Change Component Description : Designator=C1_ch1 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C1_ch2 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C1_ch3 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C1_ch4 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C1_ch5 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C1_ch6 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C2_ch1 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C2_ch2 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C2_ch3 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C2_ch4 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C2_ch5 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C2_ch6 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C7_ch1 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C7_ch2 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C7_ch3 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C7_ch4 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C7_ch5 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C7_ch6 Old Description= New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=R1_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R1_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R1_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R1_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R1_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R1_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R2_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R2_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R2_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R2_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R2_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R2_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R3_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R3_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R3_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R3_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R3_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R3_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R4_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R4_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R4_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R4_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R4_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R4_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R5_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R5_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R5_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R5_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R5_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R5_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R6_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R6_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R6_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R6_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R6_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R6_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R7_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R7_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R7_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R7_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R7_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R7_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R8_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R8_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R8_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R8_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R8_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R8_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R9_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R9_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R9_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R9_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R9_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R9_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R14_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R14_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R14_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R14_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R14_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R14_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R16_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R16_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R16_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R16_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R16_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R16_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=R17_ch1 Old Description= New Description=Resistor
+Change Component Description : Designator=R17_ch2 Old Description= New Description=Resistor
+Change Component Description : Designator=R17_ch3 Old Description= New Description=Resistor
+Change Component Description : Designator=R17_ch4 Old Description= New Description=Resistor
+Change Component Description : Designator=R17_ch5 Old Description= New Description=Resistor
+Change Component Description : Designator=R17_ch6 Old Description= New Description=Resistor
+Change Component Description : Designator=C3_ch1 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C3_ch2 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C3_ch3 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C3_ch4 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C3_ch5 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C3_ch6 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C4_ch1 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C4_ch2 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C4_ch3 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C4_ch4 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C4_ch5 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C4_ch6 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C5_ch1 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C5_ch2 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C5_ch3 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C5_ch4 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C5_ch5 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C5_ch6 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C6_ch1 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C6_ch2 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C6_ch3 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C6_ch4 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C6_ch5 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change Component Description : Designator=C6_ch6 Old Description=Ceramic Capacitor New Description=Ceramic Capacitor SMD
+Change component parameters: Designator = "C1_ch1" ("C1"); Footprint = "CAPACITOR 0603"; UniqueID = "\ZEHSHGFD\NSAFAHAC" ("\ZEHSHGFD\NSAFAHAC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C1_ch2" ("C1"); Footprint = "CAPACITOR 0603"; UniqueID = "\SPXHXCVY\NSAFAHAC" ("\SPXHXCVY\NSAFAHAC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C1_ch3" ("C1"); Footprint = "CAPACITOR 0603"; UniqueID = "\ZPDDUSWC\NSAFAHAC" ("\ZPDDUSWC\NSAFAHAC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C1_ch4" ("C1"); Footprint = "CAPACITOR 0603"; UniqueID = "\SKNDOLQQ\NSAFAHAC" ("\SKNDOLQQ\NSAFAHAC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C1_ch5" ("C1"); Footprint = "CAPACITOR 0603"; UniqueID = "\LLXUXYEH\NSAFAHAC" ("\LLXUXYEH\NSAFAHAC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C1_ch6" ("C1"); Footprint = "CAPACITOR 0603"; UniqueID = "\PNRTKVRS\NSAFAHAC" ("\PNRTKVRS\NSAFAHAC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2_ch1" ("C2"); Footprint = "CAPACITOR 0603"; UniqueID = "\ZEHSHGFD\DJPOACQO" ("\ZEHSHGFD\DJPOACQO")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2_ch2" ("C2"); Footprint = "CAPACITOR 0603"; UniqueID = "\SPXHXCVY\DJPOACQO" ("\SPXHXCVY\DJPOACQO")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2_ch3" ("C2"); Footprint = "CAPACITOR 0603"; UniqueID = "\ZPDDUSWC\DJPOACQO" ("\ZPDDUSWC\DJPOACQO")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2_ch4" ("C2"); Footprint = "CAPACITOR 0603"; UniqueID = "\SKNDOLQQ\DJPOACQO" ("\SKNDOLQQ\DJPOACQO")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2_ch5" ("C2"); Footprint = "CAPACITOR 0603"; UniqueID = "\LLXUXYEH\DJPOACQO" ("\LLXUXYEH\DJPOACQO")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2_ch6" ("C2"); Footprint = "CAPACITOR 0603"; UniqueID = "\PNRTKVRS\DJPOACQO" ("\PNRTKVRS\DJPOACQO")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C3_ch1" ("C3"); Footprint = "CAPCHIP1812"; UniqueID = "\ZEHSHGFD\TPOMTXQS" ("\ZEHSHGFD\TPOMTXQS")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C3_ch2" ("C3"); Footprint = "CAPCHIP1812"; UniqueID = "\SPXHXCVY\TPOMTXQS" ("\SPXHXCVY\TPOMTXQS")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C3_ch3" ("C3"); Footprint = "CAPCHIP1812"; UniqueID = "\ZPDDUSWC\TPOMTXQS" ("\ZPDDUSWC\TPOMTXQS")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C3_ch4" ("C3"); Footprint = "CAPCHIP1812"; UniqueID = "\SKNDOLQQ\TPOMTXQS" ("\SKNDOLQQ\TPOMTXQS")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C3_ch5" ("C3"); Footprint = "CAPCHIP1812"; UniqueID = "\LLXUXYEH\TPOMTXQS" ("\LLXUXYEH\TPOMTXQS")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C3_ch6" ("C3"); Footprint = "CAPCHIP1812"; UniqueID = "\PNRTKVRS\TPOMTXQS" ("\PNRTKVRS\TPOMTXQS")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4_ch1" ("C4"); Footprint = "CAPCHIP1812"; UniqueID = "\ZEHSHGFD\XBOOWTKL" ("\ZEHSHGFD\XBOOWTKL")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4_ch2" ("C4"); Footprint = "CAPCHIP1812"; UniqueID = "\SPXHXCVY\XBOOWTKL" ("\SPXHXCVY\XBOOWTKL")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4_ch3" ("C4"); Footprint = "CAPCHIP1812"; UniqueID = "\ZPDDUSWC\XBOOWTKL" ("\ZPDDUSWC\XBOOWTKL")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4_ch4" ("C4"); Footprint = "CAPCHIP1812"; UniqueID = "\SKNDOLQQ\XBOOWTKL" ("\SKNDOLQQ\XBOOWTKL")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4_ch5" ("C4"); Footprint = "CAPCHIP1812"; UniqueID = "\LLXUXYEH\XBOOWTKL" ("\LLXUXYEH\XBOOWTKL")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4_ch6" ("C4"); Footprint = "CAPCHIP1812"; UniqueID = "\PNRTKVRS\XBOOWTKL" ("\PNRTKVRS\XBOOWTKL")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5_ch1" ("C5"); Footprint = "CAPCHIP1812"; UniqueID = "\ZEHSHGFD\LYHATNOT" ("\ZEHSHGFD\LYHATNOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5_ch2" ("C5"); Footprint = "CAPCHIP1812"; UniqueID = "\SPXHXCVY\LYHATNOT" ("\SPXHXCVY\LYHATNOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5_ch3" ("C5"); Footprint = "CAPCHIP1812"; UniqueID = "\ZPDDUSWC\LYHATNOT" ("\ZPDDUSWC\LYHATNOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5_ch4" ("C5"); Footprint = "CAPCHIP1812"; UniqueID = "\SKNDOLQQ\LYHATNOT" ("\SKNDOLQQ\LYHATNOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5_ch5" ("C5"); Footprint = "CAPCHIP1812"; UniqueID = "\LLXUXYEH\LYHATNOT" ("\LLXUXYEH\LYHATNOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5_ch6" ("C5"); Footprint = "CAPCHIP1812"; UniqueID = "\PNRTKVRS\LYHATNOT" ("\PNRTKVRS\LYHATNOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C6_ch1" ("C6"); Footprint = "CAPCHIP1812"; UniqueID = "\ZEHSHGFD\DZEICZOT" ("\ZEHSHGFD\DZEICZOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C6_ch2" ("C6"); Footprint = "CAPCHIP1812"; UniqueID = "\SPXHXCVY\DZEICZOT" ("\SPXHXCVY\DZEICZOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C6_ch3" ("C6"); Footprint = "CAPCHIP1812"; UniqueID = "\ZPDDUSWC\DZEICZOT" ("\ZPDDUSWC\DZEICZOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C6_ch4" ("C6"); Footprint = "CAPCHIP1812"; UniqueID = "\SKNDOLQQ\DZEICZOT" ("\SKNDOLQQ\DZEICZOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C6_ch5" ("C6"); Footprint = "CAPCHIP1812"; UniqueID = "\LLXUXYEH\DZEICZOT" ("\LLXUXYEH\DZEICZOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C6_ch6" ("C6"); Footprint = "CAPCHIP1812"; UniqueID = "\PNRTKVRS\DZEICZOT" ("\PNRTKVRS\DZEICZOT")
+Change component parameters (AddParameter): Name = "Body"; Value = "{Body}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Class"; Value = "Электронные компоненты"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Installation"; Value = "{Installation}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal_voltage_V"; Value = "{Nominal_voltage_V}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ordering_Information"; Value = "{Ordering_Information}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "{Pins}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SubClass"; Value = "Конденсаторы"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TKE"; Value = "{TKE}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1812 4.7 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C7_ch1" ("C7"); Footprint = "CAPACITOR 0603"; UniqueID = "\ZEHSHGFD\KXGBUTKM" ("\ZEHSHGFD\KXGBUTKM")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C7_ch2" ("C7"); Footprint = "CAPACITOR 0603"; UniqueID = "\SPXHXCVY\KXGBUTKM" ("\SPXHXCVY\KXGBUTKM")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C7_ch3" ("C7"); Footprint = "CAPACITOR 0603"; UniqueID = "\ZPDDUSWC\KXGBUTKM" ("\ZPDDUSWC\KXGBUTKM")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C7_ch4" ("C7"); Footprint = "CAPACITOR 0603"; UniqueID = "\SKNDOLQQ\KXGBUTKM" ("\SKNDOLQQ\KXGBUTKM")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C7_ch5" ("C7"); Footprint = "CAPACITOR 0603"; UniqueID = "\LLXUXYEH\KXGBUTKM" ("\LLXUXYEH\KXGBUTKM")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C7_ch6" ("C7"); Footprint = "CAPACITOR 0603"; UniqueID = "\PNRTKVRS\KXGBUTKM" ("\PNRTKVRS\KXGBUTKM")
+Change component parameters (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0603 0.1 uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R1_ch1" ("R1"); Footprint = "Resistor 0402"; UniqueID = "\ZEHSHGFD\JRENJFUN" ("\ZEHSHGFD\JRENJFUN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R1_ch2" ("R1"); Footprint = "Resistor 0402"; UniqueID = "\SPXHXCVY\JRENJFUN" ("\SPXHXCVY\JRENJFUN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R1_ch3" ("R1"); Footprint = "Resistor 0402"; UniqueID = "\ZPDDUSWC\JRENJFUN" ("\ZPDDUSWC\JRENJFUN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R1_ch4" ("R1"); Footprint = "Resistor 0402"; UniqueID = "\SKNDOLQQ\JRENJFUN" ("\SKNDOLQQ\JRENJFUN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R1_ch5" ("R1"); Footprint = "Resistor 0402"; UniqueID = "\LLXUXYEH\JRENJFUN" ("\LLXUXYEH\JRENJFUN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R1_ch6" ("R1"); Footprint = "Resistor 0402"; UniqueID = "\PNRTKVRS\JRENJFUN" ("\PNRTKVRS\JRENJFUN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2_ch1" ("R2"); Footprint = "Resistor 0402"; UniqueID = "\ZEHSHGFD\CDWBUOBF" ("\ZEHSHGFD\CDWBUOBF")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 100K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2_ch2" ("R2"); Footprint = "Resistor 0402"; UniqueID = "\SPXHXCVY\CDWBUOBF" ("\SPXHXCVY\CDWBUOBF")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 100K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2_ch3" ("R2"); Footprint = "Resistor 0402"; UniqueID = "\ZPDDUSWC\CDWBUOBF" ("\ZPDDUSWC\CDWBUOBF")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 100K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2_ch4" ("R2"); Footprint = "Resistor 0402"; UniqueID = "\SKNDOLQQ\CDWBUOBF" ("\SKNDOLQQ\CDWBUOBF")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 100K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2_ch5" ("R2"); Footprint = "Resistor 0402"; UniqueID = "\LLXUXYEH\CDWBUOBF" ("\LLXUXYEH\CDWBUOBF")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 100K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2_ch6" ("R2"); Footprint = "Resistor 0402"; UniqueID = "\PNRTKVRS\CDWBUOBF" ("\PNRTKVRS\CDWBUOBF")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 100K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3_ch1" ("R3"); Footprint = "Resistor 0402"; UniqueID = "\ZEHSHGFD\JWILDZMC" ("\ZEHSHGFD\JWILDZMC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3_ch2" ("R3"); Footprint = "Resistor 0402"; UniqueID = "\SPXHXCVY\JWILDZMC" ("\SPXHXCVY\JWILDZMC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3_ch3" ("R3"); Footprint = "Resistor 0402"; UniqueID = "\ZPDDUSWC\JWILDZMC" ("\ZPDDUSWC\JWILDZMC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3_ch4" ("R3"); Footprint = "Resistor 0402"; UniqueID = "\SKNDOLQQ\JWILDZMC" ("\SKNDOLQQ\JWILDZMC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3_ch5" ("R3"); Footprint = "Resistor 0402"; UniqueID = "\LLXUXYEH\JWILDZMC" ("\LLXUXYEH\JWILDZMC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3_ch6" ("R3"); Footprint = "Resistor 0402"; UniqueID = "\PNRTKVRS\JWILDZMC" ("\PNRTKVRS\JWILDZMC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4_ch1" ("R4"); Footprint = "Resistor 0402"; UniqueID = "\ZEHSHGFD\ZSNESJKN" ("\ZEHSHGFD\ZSNESJKN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4_ch2" ("R4"); Footprint = "Resistor 0402"; UniqueID = "\SPXHXCVY\ZSNESJKN" ("\SPXHXCVY\ZSNESJKN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4_ch3" ("R4"); Footprint = "Resistor 0402"; UniqueID = "\ZPDDUSWC\ZSNESJKN" ("\ZPDDUSWC\ZSNESJKN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4_ch4" ("R4"); Footprint = "Resistor 0402"; UniqueID = "\SKNDOLQQ\ZSNESJKN" ("\SKNDOLQQ\ZSNESJKN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4_ch5" ("R4"); Footprint = "Resistor 0402"; UniqueID = "\LLXUXYEH\ZSNESJKN" ("\LLXUXYEH\ZSNESJKN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4_ch6" ("R4"); Footprint = "Resistor 0402"; UniqueID = "\PNRTKVRS\ZSNESJKN" ("\PNRTKVRS\ZSNESJKN")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R5_ch1" ("R5"); Footprint = "Resistor 1206"; UniqueID = "\ZEHSHGFD\CWWLNLNB" ("\ZEHSHGFD\CWWLNLNB")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R5_ch2" ("R5"); Footprint = "Resistor 1206"; UniqueID = "\SPXHXCVY\CWWLNLNB" ("\SPXHXCVY\CWWLNLNB")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R5_ch3" ("R5"); Footprint = "Resistor 1206"; UniqueID = "\ZPDDUSWC\CWWLNLNB" ("\ZPDDUSWC\CWWLNLNB")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R5_ch4" ("R5"); Footprint = "Resistor 1206"; UniqueID = "\SKNDOLQQ\CWWLNLNB" ("\SKNDOLQQ\CWWLNLNB")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R5_ch5" ("R5"); Footprint = "Resistor 1206"; UniqueID = "\LLXUXYEH\CWWLNLNB" ("\LLXUXYEH\CWWLNLNB")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R5_ch6" ("R5"); Footprint = "Resistor 1206"; UniqueID = "\PNRTKVRS\CWWLNLNB" ("\PNRTKVRS\CWWLNLNB")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch1" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\ZEHSHGFD\JSAGWEXM" ("\ZEHSHGFD\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch2" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\SPXHXCVY\JSAGWEXM" ("\SPXHXCVY\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch3" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\ZPDDUSWC\JSAGWEXM" ("\ZPDDUSWC\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch4" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\SKNDOLQQ\JSAGWEXM" ("\SKNDOLQQ\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch5" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\LLXUXYEH\JSAGWEXM" ("\LLXUXYEH\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6_ch6" ("R6"); Footprint = "Resistor 1206"; UniqueID = "\PNRTKVRS\JSAGWEXM" ("\PNRTKVRS\JSAGWEXM")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R7_ch1" ("R7"); Footprint = "Resistor 1206"; UniqueID = "\ZEHSHGFD\SPTPUMXA" ("\ZEHSHGFD\SPTPUMXA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R7_ch2" ("R7"); Footprint = "Resistor 1206"; UniqueID = "\SPXHXCVY\SPTPUMXA" ("\SPXHXCVY\SPTPUMXA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R7_ch3" ("R7"); Footprint = "Resistor 1206"; UniqueID = "\ZPDDUSWC\SPTPUMXA" ("\ZPDDUSWC\SPTPUMXA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R7_ch4" ("R7"); Footprint = "Resistor 1206"; UniqueID = "\SKNDOLQQ\SPTPUMXA" ("\SKNDOLQQ\SPTPUMXA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R7_ch5" ("R7"); Footprint = "Resistor 1206"; UniqueID = "\LLXUXYEH\SPTPUMXA" ("\LLXUXYEH\SPTPUMXA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R7_ch6" ("R7"); Footprint = "Resistor 1206"; UniqueID = "\PNRTKVRS\SPTPUMXA" ("\PNRTKVRS\SPTPUMXA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R8_ch1" ("R8"); Footprint = "Resistor 1206"; UniqueID = "\ZEHSHGFD\VPSYMRGU" ("\ZEHSHGFD\VPSYMRGU")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R8_ch2" ("R8"); Footprint = "Resistor 1206"; UniqueID = "\SPXHXCVY\VPSYMRGU" ("\SPXHXCVY\VPSYMRGU")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R8_ch3" ("R8"); Footprint = "Resistor 1206"; UniqueID = "\ZPDDUSWC\VPSYMRGU" ("\ZPDDUSWC\VPSYMRGU")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R8_ch4" ("R8"); Footprint = "Resistor 1206"; UniqueID = "\SKNDOLQQ\VPSYMRGU" ("\SKNDOLQQ\VPSYMRGU")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R8_ch5" ("R8"); Footprint = "Resistor 1206"; UniqueID = "\LLXUXYEH\VPSYMRGU" ("\LLXUXYEH\VPSYMRGU")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R8_ch6" ("R8"); Footprint = "Resistor 1206"; UniqueID = "\PNRTKVRS\VPSYMRGU" ("\PNRTKVRS\VPSYMRGU")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 1 Om"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch1" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\ZEHSHGFD\XYSFDHTA" ("\ZEHSHGFD\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch2" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\SPXHXCVY\XYSFDHTA" ("\SPXHXCVY\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch3" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\ZPDDUSWC\XYSFDHTA" ("\ZPDDUSWC\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch4" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\SKNDOLQQ\XYSFDHTA" ("\SKNDOLQQ\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch5" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\LLXUXYEH\XYSFDHTA" ("\LLXUXYEH\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9_ch6" ("R9"); Footprint = "Resistor 1206"; UniqueID = "\PNRTKVRS\XYSFDHTA" ("\PNRTKVRS\XYSFDHTA")
+Change component parameters (AddParameter): Name = "Package"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1206 NC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R14_ch1" ("R14"); Footprint = "Resistor 0402"; UniqueID = "\ZEHSHGFD\RSDMTTPL" ("\ZEHSHGFD\RSDMTTPL")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R14_ch2" ("R14"); Footprint = "Resistor 0402"; UniqueID = "\SPXHXCVY\RSDMTTPL" ("\SPXHXCVY\RSDMTTPL")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R14_ch3" ("R14"); Footprint = "Resistor 0402"; UniqueID = "\ZPDDUSWC\RSDMTTPL" ("\ZPDDUSWC\RSDMTTPL")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R14_ch4" ("R14"); Footprint = "Resistor 0402"; UniqueID = "\SKNDOLQQ\RSDMTTPL" ("\SKNDOLQQ\RSDMTTPL")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R14_ch5" ("R14"); Footprint = "Resistor 0402"; UniqueID = "\LLXUXYEH\RSDMTTPL" ("\LLXUXYEH\RSDMTTPL")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R14_ch6" ("R14"); Footprint = "Resistor 0402"; UniqueID = "\PNRTKVRS\RSDMTTPL" ("\PNRTKVRS\RSDMTTPL")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16_ch1" ("R16"); Footprint = "Resistor 0402"; UniqueID = "\ZEHSHGFD\JEBUCNEC" ("\ZEHSHGFD\JEBUCNEC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16_ch2" ("R16"); Footprint = "Resistor 0402"; UniqueID = "\SPXHXCVY\JEBUCNEC" ("\SPXHXCVY\JEBUCNEC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16_ch3" ("R16"); Footprint = "Resistor 0402"; UniqueID = "\ZPDDUSWC\JEBUCNEC" ("\ZPDDUSWC\JEBUCNEC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16_ch4" ("R16"); Footprint = "Resistor 0402"; UniqueID = "\SKNDOLQQ\JEBUCNEC" ("\SKNDOLQQ\JEBUCNEC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16_ch5" ("R16"); Footprint = "Resistor 0402"; UniqueID = "\LLXUXYEH\JEBUCNEC" ("\LLXUXYEH\JEBUCNEC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16_ch6" ("R16"); Footprint = "Resistor 0402"; UniqueID = "\PNRTKVRS\JEBUCNEC" ("\PNRTKVRS\JEBUCNEC")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17_ch1" ("R17"); Footprint = "Resistor 0402"; UniqueID = "\ZEHSHGFD\QQQPOVCQ" ("\ZEHSHGFD\QQQPOVCQ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17_ch2" ("R17"); Footprint = "Resistor 0402"; UniqueID = "\SPXHXCVY\QQQPOVCQ" ("\SPXHXCVY\QQQPOVCQ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17_ch3" ("R17"); Footprint = "Resistor 0402"; UniqueID = "\ZPDDUSWC\QQQPOVCQ" ("\ZPDDUSWC\QQQPOVCQ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17_ch4" ("R17"); Footprint = "Resistor 0402"; UniqueID = "\SKNDOLQQ\QQQPOVCQ" ("\SKNDOLQQ\QQQPOVCQ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17_ch5" ("R17"); Footprint = "Resistor 0402"; UniqueID = "\LLXUXYEH\QQQPOVCQ" ("\LLXUXYEH\QQQPOVCQ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17_ch6" ("R17"); Footprint = "Resistor 0402"; UniqueID = "\PNRTKVRS\QQQPOVCQ" ("\PNRTKVRS\QQQPOVCQ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 10K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=gnd_ch1 Pin=DG1-1
+Added Pin To Net: NetName=Vin_ch1 Pin=DG1-2
+Added Pin To Net: NetName=NetC5_ch6_2 Pin=DG1-3
+Added Pin To Net: NetName=NetC5_ch6_1 Pin=DG1-4
+Added Pin To Net: NetName=NetC5_ch5_2 Pin=DG1-5
+Added Pin To Net: NetName=NetC5_ch5_1 Pin=DG1-6
+Added Pin To Net: NetName=NetC5_ch4_2 Pin=DG1-7
+Added Pin To Net: NetName=NetC5_ch4_1 Pin=DG1-8
+Added Pin To Net: NetName=NetC5_ch3_2 Pin=DG1-9
+Added Pin To Net: NetName=NetC5_ch3_1 Pin=DG1-10
+Added Pin To Net: NetName=NetC5_ch2_2 Pin=DG1-11
+Added Pin To Net: NetName=NetC5_ch2_1 Pin=DG1-12
+Added Pin To Net: NetName=NetC5_ch1_2 Pin=DG1-13
+Added Pin To Net: NetName=NetC5_ch1_1 Pin=DG1-14
+Added Pin To Net: NetName=gnd_ch1 Pin=DG1-15
+Added Pin To Net: NetName=Vin_ch1 Pin=DG1-16

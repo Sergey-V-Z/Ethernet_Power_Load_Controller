@@ -1,16 +1,18 @@
 Altium Designer Pick and Place Locations
-D:\Radio\Jobe\PWR_Switch_ETH\PCB\control_PWR_PCB\Project Outputs for control_PWR_PCB\Pick Place\Pick Place for control_PWR_PCB.csv
+D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\control_PWR_PCB\Project Outputs for control_PWR_PCB\Pick Place\Pick Place for control_PWR_PCB.csv
 
 ========================================================================================================================
 File Design Information:
 
-Date:       10.08.23
-Time:       14:07
-Revision:   212c6c857b912292d738243e22499187a32923a1
+Date:       15.08.23
+Time:       17:02
+Revision:   37644a6445352571cc417a6fa637af2c93f11e82
 Variant:    No variations
 Units used: mm
 
 "Designator","Comment","Layer","Center-X(mm)","Center-Y(mm)","Rotation","Description"
+"DG1","15EDGVC-3.5-2P","TopLayer","62.7750mm","6.5370mm","90",""
+"DG2","15EDGVC-3.5-2P","TopLayer","23.7000mm","6.5735mm","90",""
 "R52","0603 33R","TopLayer","61.0000mm","88.0500mm","90","Resistor"
 "R51","0603 33R","TopLayer","62.8572mm","88.0500mm","90","Resistor"
 "D4","B340A-13","TopLayer","52.4500mm","9.1500mm","270","Diode Schottky 40 V 3A Surface Mount SMA"
@@ -19,8 +21,6 @@ Units used: mm
 "R47","0603 0","TopLayer","42.1750mm","56.6750mm","90","Resistor"
 "R46","0603 NC","TopLayer","37.1500mm","56.6750mm","90","Resistor"
 "R45","0603 0","TopLayer","35.5000mm","56.6750mm","90","Resistor"
-"DG1","15EDGVC-3.5-2P","TopLayer","62.7750mm","6.5370mm","270",""
-"DG2","15EDGVC-3.5-2P","TopLayer","23.7000mm","6.5735mm","270",""
 "C36","EEEFK1V471SV","TopLayer","52.1000mm","69.3750mm","180","470ЕF 35V Aluminum Electrolytic Capacitors Radial, Can - SMD 80mOhm @ 100kHz 2000 Hrs @ 105АC"
 "C35","EEEFK1V471SV","TopLayer","48.6750mm","41.7250mm","90","470ЕF 35V Aluminum Electrolytic Capacitors Radial, Can - SMD 80mOhm @ 100kHz 2000 Hrs @ 105АC"
 "VD6","0805 Green","TopLayer","41.1248mm","85.2000mm","270","0805 Green"
@@ -51,7 +51,7 @@ Units used: mm
 "C3","1812 4.7 uF","TopLayer","31.7750mm","22.1250mm","270","Ceramic Capacitor SMD"
 "R39","0603 510R","TopLayer","23.8250mm","57.8250mm","180","Resistor"
 "X5","25Mhz","TopLayer","6.4750mm","84.8250mm","90","3.3_2.5 25Mhz"
-"X4","12Mhz","TopLayer","16.4500mm","62.2500mm","270","3.3_2.5 12Mhz"
+"X4","12Mhz","TopLayer","16.2750mm","61.7000mm","360","3.3_2.5 12Mhz"
 "X3","PLS-5 2.54","TopLayer","29.8750mm","62.4500mm","270","Header, 5-Pin"
 "R10","0603 1k","TopLayer","68.1750mm","39.3250mm","270","Resistor"
 "R9","0603 3k","TopLayer","68.1750mm","42.8750mm","90","Resistor"
@@ -113,17 +113,17 @@ Units used: mm
 "C23","1206 1000p 2kv","TopLayer","12.1000mm","87.7750mm","180","Ceramic Capacitor SMD"
 "C22","0603 0.1uF","TopLayer","12.9575mm","70.7675mm","180","Ceramic Capacitor SMD"
 "C21","0603 0.1uF","TopLayer","13.8750mm","84.0500mm","270","Ceramic Capacitor SMD"
-"C19","0603 0.1uF","TopLayer","12.4750mm","60.7000mm","270","Ceramic Capacitor SMD"
-"C18","0603 0.1uF","TopLayer","10.7750mm","60.6750mm","270","Ceramic Capacitor SMD"
-"C17","0603 18 яд","TopLayer","15.7694mm","65.3250mm","180","Ceramic Capacitor SMD 0603"
+"C19","0603 0.1uF","TopLayer","10.8000mm","61.5000mm","270","Ceramic Capacitor SMD"
+"C18","0603 0.1uF","TopLayer","9.1000mm","61.4750mm","270","Ceramic Capacitor SMD"
+"C17","0603 18 яд","TopLayer","14.9000mm","65.2250mm","270","Ceramic Capacitor SMD 0603"
 "C16","0603 0.1uF","TopLayer","19.7250mm","61.9250mm","270","Ceramic Capacitor SMD"
-"C15","0603 18 яд","TopLayer","17.2500mm","59.1500mm","180","Ceramic Capacitor SMD 0603"
+"C15","0603 18 яд","TopLayer","17.8750mm","65.2750mm","270","Ceramic Capacitor SMD 0603"
 "C14","0603 0.1uF","TopLayer","22.9000mm","62.1250mm","270","Ceramic Capacitor SMD"
-"C13","0603 0.1uF","TopLayer","20.3750mm","70.2000mm","360","Ceramic Capacitor SMD C0603"
+"C13","0603 0.1uF","TopLayer","18.6500mm","68.6000mm","270","Ceramic Capacitor SMD C0603"
 "C12","0603 0.1uF","TopLayer","18.2500mm","80.4000mm","270","Ceramic Capacitor SMD C0603"
 "C11","0805 2.2uF","TopLayer","21.0500mm","37.9000mm","0","Ceramic Capacitor SMD"
 "C10","0603 0.1uF","TopLayer","24.5750mm","38.2250mm","270","Ceramic Capacitor SMD"
-"C9","TECAP B 10u 16V","TopLayer","42.4750mm","78.4750mm","270","Solid Tantalum Surface Mount Capacitors"
+"C9","TECAP B 10u 16V","TopLayer","22.3500mm","70.0000mm","360","Solid Tantalum Surface Mount Capacitors"
 "C8","0603 0.1uF","TopLayer","20.4000mm","79.1500mm","270","Ceramic Capacitor SMD"
 "C7","0603 0.1uF","TopLayer","25.7250mm","54.0500mm","360","Ceramic Capacitor SMD"
 "C6","0603 0.1uF","TopLayer","35.9250mm","79.1500mm","270","Ceramic Capacitor SMD"

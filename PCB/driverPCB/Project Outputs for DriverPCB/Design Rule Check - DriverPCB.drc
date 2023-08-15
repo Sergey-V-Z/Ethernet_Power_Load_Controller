@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : D:\Radio\Jobe\LED_Driver_ETH\PCBv2\driverPCB\DriverPCB.PcbDoc
-Date     : 08.08.2023
-Time     : 10:50:13
+PCB File : D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\driverPCB\DriverPCB.PcbDoc
+Date     : 15.08.2023
+Time     : 16:59:05
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
 Rule Violations :0
@@ -45,4 +45,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:02
+Time Elapsed        : 00:00:01

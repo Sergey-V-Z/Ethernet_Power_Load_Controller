@@ -1,0 +1,24 @@
+Change Component Comment : Designator=VD2 Old Comment= New Comment=0805 G
+Change Component Comment : Designator=VD3 Old Comment= New Comment=0805 G
+Change Component Description : Designator=VD2 Old Description= New Description=Green
+Change Component Description : Designator=VD3 Old Description= New Description=Green
+Change component parameters: Designator = "VD2" ("VD2"); Footprint = "0805-"; UniqueID = "\XZHNRDLA" ("\XZHNRDLA")
+Change component parameters (AddParameter): Name = "CompType"; Value = "LED"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Note"; Value = "Read"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0805 G"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "VD3" ("VD3"); Footprint = "0805-"; UniqueID = "\EPAKVCIH" ("\EPAKVCIH")
+Change component parameters (AddParameter): Name = "CompType"; Value = "LED"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Note"; Value = "Read"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance_Percent"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0805 G"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage"; Value = ""; VariantName = "[No Variations]"

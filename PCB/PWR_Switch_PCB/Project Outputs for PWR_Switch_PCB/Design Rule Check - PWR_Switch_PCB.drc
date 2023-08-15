@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : D:\Radio\Jobe\PWR_Switch_ETH\PCB\PWR_Switch_PCB\PWR_Switch_PCB.PcbDoc
-Date     : 09.08.2023
-Time     : 14:16:41
+PCB File : D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\PWR_Switch_PCB\PWR_Switch_PCB.PcbDoc
+Date     : 15.08.2023
+Time     : 16:58:17
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
 Rule Violations :0

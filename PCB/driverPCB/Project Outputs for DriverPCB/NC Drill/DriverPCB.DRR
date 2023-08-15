@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: DriverPCB.PcbDoc   09.06.2023  0:02:04
+NCDrill File Report For: DriverPCB.PcbDoc   15.08.2023  17:01:01
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,8 +7,8 @@ ASCII Plated RoundHoles File : DriverPCB-Plated.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.3mm (12mil)                                             Round             151       PTH        0.00mm (0.00inch)
-T2      0.9mm (35mil)                                             Round             46        PTH        0.00mm (0.00inch)
+T1      0.3mm (12mil)                                             Round             159       PTH        0.00mm (0.00inch)
+T2      0.9mm (35mil)                                             Round             38        PTH        0.00mm (0.00inch)
 T3      1.4mm (55mil)                                             Round             16        PTH        0.00mm (0.00inch)
 ----------------------------------------------------------------------------------------------------------------------------------
 Totals                                                                              213
