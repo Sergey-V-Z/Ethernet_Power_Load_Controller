@@ -45,9 +45,7 @@ using namespace std;
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define START_ADR_I2C 32
-#define MAX_ADR_I2C 15
-#define MAX_CH_NAME 45
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -61,8 +59,10 @@ extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
 
 extern settings_t settings;
+extern chName_t NameCH[MAX_CH_NAME];
 uint16_t sensBuff[8] = {0};
 uint8_t sensState = 255; // битовое поле
+bool rx_end = 1;
 
 uint32_t freqSens = HAL_RCC_GetHCLKFreq()/30000u;
 uint32_t pwmSens;
@@ -70,8 +70,8 @@ uint32_t pwmSens;
 uint16_t adc_buffer[24] = {0};
 uint16_t adc_buffer2[24] = {0};
 
-uint8_t TX_buff[15]={0}; // i2c buff
-uint8_t RX_buff[21]={0}; // i2c buff
+uint16_t TX_buff[15]={0}; // buff
+uint16_t RX_buff[24]={0}; // buff
 
 extern led LED_IPadr;
 extern led LED_error;
@@ -86,12 +86,13 @@ string in_str;
 
 //переменные для обшей работы
 uint32_t Start = 0;
-extern I2C_HandleTypeDef hi2c1;
+extern UART_HandleTypeDef huart1;
 extern flash mem_spi;
 
 //переменные для тестов
 
 uint8_t txRedy = 1;
+
 
 /* USER CODE END Variables */
 osThreadId MainTaskHandle;
@@ -214,133 +215,112 @@ void mainTask(void const * argument)
   /* init code for LWIP */
   MX_LWIP_Init();
   /* USER CODE BEGIN mainTask */
-
 	HAL_StatusTypeDef status1;
-
-
-	// Сбросим карту адрессов
-	/*
-	I2C_Map.CountAddresI2C = 0;
-	for (int var = 0; var < 128; ++var) {
-		I2C_Map.I2C_addr[var] = 0;
-	}
-	 */
-
-	/*
-	// Сканируем I2C и заносим в карту
-	for(int i=1; i<128; i++)
-	{
-		int ret = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 1, 5);
-		if (ret != HAL_OK) // No ACK Received At That Address
-		{  }
-		else if(ret == HAL_OK)
-		{
-			I2C_Map.I2C_addr[I2C_Map.CountAddresI2C] = (uint16_t)(i<<1);
-			I2C_Map.CountAddresI2C ++;
-		}
-	}
-	 */
+	//uint8_t channelForName = 0;
+	uint16_t Address = 0;
 	/* Infinite loop */
 	for(;;)
 	{
 
-		//status1 = HAL_I2C_IsDeviceReady(&hi2c1, 0x40 << 1, 3, 100);
 		if(1){
-			txRedy = 0;
 
-			for (int var = 0; var < 45; ++var) {
 
-				if((settings.Global_I2C[var].i2c_addr.I2C_addr >= START_ADR_I2C) && (settings.Global_I2C[var].i2c_addr.I2C_addr <= (START_ADR_I2C + MAX_ADR_I2C))){
-					// запрос данных
-					status1 = HAL_I2C_Master_Receive(&hi2c1,
-							(uint16_t)settings.Global_I2C[var].i2c_addr.I2C_addr << 1,
-							RX_buff,
-							21, 100);
+			for (int var = 0; var < MAX_ADR_DEV; ++var) {
 
+				if((settings.devices[var].Addr >= START_ADR_I2C) && (settings.devices[var].Addr <= (START_ADR_I2C + MAX_ADR_DEV))){
+
+					for (int i = 0; i < 15; ++i) {
+						TX_buff[i] = 0;
+					}
+					//передаем данные в устройство
+					// ch0 *******************************************************
+
+					TX_buff[0] = settings.devices[var].ch[0].PWM_out & 0xFF;
+					TX_buff[1] = (settings.devices[var].ch[0].PWM_out >> 8) & 0xFF;
+					TX_buff[2] = (settings.devices[var].ch[0].PWM_out >> 16) & 0xFF;
+					TX_buff[3] = (settings.devices[var].ch[0].PWM_out >> 24) & 0xFF;
+
+					TX_buff[4] = settings.devices[var].ch[0].On_off;
+
+					// ch1 *******************************************************
+					TX_buff[5] = settings.devices[var].ch[1].PWM_out & 0xFF;
+					TX_buff[6] = (settings.devices[var].ch[1].PWM_out >> 8) & 0xFF;
+					TX_buff[7] = (settings.devices[var].ch[1].PWM_out >> 16) & 0xFF;
+					TX_buff[8] = (settings.devices[var].ch[1].PWM_out >> 24) & 0xFF;
+
+					TX_buff[9] = settings.devices[var].ch[1].On_off;
+
+					// ch2 *******************************************************
+					TX_buff[10] = settings.devices[var].ch[2].PWM_out & 0xFF;
+					TX_buff[11] = (settings.devices[var].ch[2].PWM_out >> 8) & 0xFF;
+					TX_buff[12] = (settings.devices[var].ch[2].PWM_out >> 16) & 0xFF;
+					TX_buff[13] = (settings.devices[var].ch[2].PWM_out >> 24) & 0xFF;
+
+					TX_buff[14] = settings.devices[var].ch[2].On_off;
+
+
+					status1 = HAL_UART_Receive_DMA(&huart1, (uint8_t*)RX_buff, 24);// Read data
+					Address =  settings.devices[var].Addr  | 0x0100;
+					status1 = HAL_UART_Transmit(&huart1, (uint8_t*)&Address, 1, 10);
+					status1 = HAL_UART_Transmit(&huart1, (uint8_t*)TX_buff, 15, 10);
 					if(status1 != HAL_OK){
+						settings.devices[var].ERR_counter ++;
+						settings.devices[var].last_ERR = status1;
 						LED_error.LEDon();
+						continue;
 					}
 					else{
+						settings.devices[var].last_ERR = status1;
 						LED_error.LEDoff();
 					}
 
-					//буффер рассовываем по переменным (переделать в указатели)
+					for (int i = 0; i < 10; ++i) {
+						if(rx_end){
+							rx_end = 0;
+							//буффер рассовываем по переменным (переделать в указатели)
 
-					// ch1 *******************************************************
-					settings.Global_I2C[var].i2c_addr.led_Sett.PWM =
-							RX_buff[0] | (RX_buff[1] << 8) | (RX_buff[2] << 16) | (RX_buff[3] << 24);
+							// ch0 *******************************************************
 
-					settings.Global_I2C[var].i2c_addr.led_Sett.Current =
-							RX_buff[4] | (RX_buff[5] << 8);
+							settings.devices[var].ch[0].PWM =
+									RX_buff[0] | (RX_buff[1] << 8) | (RX_buff[2] << 16) | (RX_buff[3] << 24);
 
-					settings.Global_I2C[var].i2c_addr.led_Sett.IsOn =
-							RX_buff[6];
+							settings.devices[var].ch[0].Current = RX_buff[4] | (RX_buff[5] << 8);
 
-					// ch2 *******************************************************
-					++var;
-					settings.Global_I2C[var].i2c_addr.led_Sett.PWM =
-							RX_buff[7] | (RX_buff[8] << 8) | (RX_buff[9] << 16) | (RX_buff[10] << 24);
+							settings.devices[var].ch[0].IsOn = RX_buff[6];
 
-					settings.Global_I2C[var].i2c_addr.led_Sett.Current =
-							RX_buff[11] | (RX_buff[12] << 8);
+							// ch1 *******************************************************
 
-					settings.Global_I2C[var].i2c_addr.led_Sett.IsOn =
-							RX_buff[13];
+							settings.devices[var].ch[1].PWM =
+									RX_buff[7] | (RX_buff[8] << 8) | (RX_buff[9] << 16) | (RX_buff[10] << 24);
 
-					// ch3 *******************************************************
-					++var;
-					settings.Global_I2C[var].i2c_addr.led_Sett.PWM =
-							RX_buff[14] | (RX_buff[15] << 8) | (RX_buff[16] << 16) | (RX_buff[17] << 24);
+							settings.devices[var].ch[1].Current = RX_buff[11] | (RX_buff[12] << 8);
 
-					settings.Global_I2C[var].i2c_addr.led_Sett.Current =
-							RX_buff[18] | (RX_buff[19] << 8);
+							settings.devices[var].ch[1].IsOn = RX_buff[13];
 
-					settings.Global_I2C[var].i2c_addr.led_Sett.IsOn =
-							RX_buff[20];
+							// ch2 *******************************************************
 
-					//передаем данные в устройство
+							settings.devices[var].ch[2].PWM =
+									RX_buff[14] | (RX_buff[15] << 8) | (RX_buff[16] << 16) | (RX_buff[17] << 24);
 
-					// ch1 *******************************************************
-					var = var - 2;
+							settings.devices[var].ch[2].Current = RX_buff[18] | (RX_buff[19] << 8);
 
-					TX_buff[0] = settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out & 0xFF;
-					TX_buff[1] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 8) & 0xFF;
-					TX_buff[2] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 16) & 0xFF;
-					TX_buff[3] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 24) & 0xFF;
+							settings.devices[var].ch[2].IsOn = RX_buff[20];
 
-					TX_buff[4] = settings.Global_I2C[var].i2c_addr.led_Sett.On_off;
+							settings.devices[var].TypePCB = (PCBType)RX_buff[22];
+							settings.devices[var].AddrFromDev = RX_buff[21];
+							break;
+						}else{
+							osDelay(1);
+						}
 
-					// ch2 *******************************************************
-					++var;
-					TX_buff[5] = settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out & 0xFF;
-					TX_buff[6] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 8) & 0xFF;
-					TX_buff[7] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 16) & 0xFF;
-					TX_buff[8] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 24) & 0xFF;
-
-					TX_buff[9] = settings.Global_I2C[var].i2c_addr.led_Sett.On_off;
-
-					// ch3 *******************************************************
-					++var;
-					TX_buff[10] = settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out & 0xFF;
-					TX_buff[11] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 8) & 0xFF;
-					TX_buff[12] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 16) & 0xFF;
-					TX_buff[13] = (settings.Global_I2C[var].i2c_addr.led_Sett.PWM_out >> 24) & 0xFF;
-
-					TX_buff[14] = settings.Global_I2C[var].i2c_addr.led_Sett.On_off;
-
-					osDelay(5);
-					status1 = HAL_I2C_Master_Transmit(&hi2c1,
-							(uint16_t)settings.Global_I2C[var].i2c_addr.I2C_addr << 1,
-							TX_buff,
-							15, 100);
-					osDelay(5);
+					}
 				}
 
 			}
-
+			osDelay(1);
 		}
 
-		osDelay(100);
+		//osDelay(10);
 	}
   /* USER CODE END mainTask */
 }
@@ -458,7 +438,7 @@ void eth_Task(void const * argument)
 					accept_err=netconn_accept(conn,&newconn);//suspend until new connection
 					if (accept_err==ERR_OK)
 					{
-						//LED_IPadr.LEDon();
+						LED_IPadr.LEDon();
 						while ((accept_err=netconn_recv(newconn,&netbuf))==ERR_OK)//работаем до тех пор пока клиент не разорвет соеденение
 						{
 
@@ -478,7 +458,7 @@ void eth_Task(void const * argument)
 						}
 						netconn_close(newconn);
 						netconn_delete(newconn);
-						//LED_IPadr.LEDoff();
+						LED_IPadr.LEDoff();
 					} else netconn_delete(newconn);
 					osDelay(20);
 				}
@@ -502,92 +482,11 @@ void HAL_TIM_IC_CaptureCallback (TIM_HandleTypeDef *htim)
 	}
 }
 
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 
-void HAL_I2C_MasterTxCpltCallback (I2C_HandleTypeDef * hi2c)
-{
-	txRedy = 1;
-	// TX Done .. Do Something!
 }
-
-void HAL_I2C_MasterRxCpltCallback (I2C_HandleTypeDef * hi2c)
-{
-	// RX Done .. Do Something!
-}
-
-
-/*
- * функция установки нового устройства
- * Addr - I2C адрес
- * CH	- один из трех канвлов
- * Name	- глобальное имя от 1 до 45
- */
-int set_i2c_dev(uint8_t Addr, uint8_t CH, uint8_t Name){
-	uint8_t ret = 0;
-	// проверка входных данных
-	if(CH > 2){
-		return 1;
-	}
-	if((Name > 44)){
-		return 2;
-	}
-	//если вышли за диапазон
-	if((Addr <  START_ADR_I2C) || (Addr > (START_ADR_I2C + MAX_ADR_I2C))){
-		return 3;
-	}
-
-	// если в ячейке записанно число которое входит в диапазон
-	if ((settings.Global_I2C[Name].i2c_addr.I2C_addr >= START_ADR_I2C) &&
-			(settings.Global_I2C[Name].i2c_addr.I2C_addr <= (START_ADR_I2C + MAX_ADR_I2C))) {
-		if(settings.Global_I2C[Name].i2c_addr.led_Sett.Name_ch < 44){
-			return 4;
-		}
-	}
-
-	//mem_spi.W25qxx_EraseSector(0);
-	// записываем данные в память и сохраняем на флешку
-	settings.Global_I2C[Name].i2c_addr.I2C_addr = Addr;
-	settings.Global_I2C[Name].Channel_number = CH;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.Name_ch = Name;
-
-	settings.Global_I2C[Name].i2c_addr.led_Sett.Current = 0;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.IsOn = 0;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.On_off = 0;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.PWM = 0;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.PWM_out = 0;
-	//mem_spi.Write(settings);
-
-	return ret;
-}
-
-/*
- * функция удаления устройства
- * Addr - I2C адрес
- * CH	- один из трех канвлов
- * Name	- глобальное имя от 1 до 45
- */
-int del_i2c_dev(uint8_t Name){
-	uint8_t ret = 0;
-
-	if((Name > 44)){
-		return -2;
-	}
-
-	//mem_spi.W25qxx_EraseSector(0);
-	// записываем данные в память и сохраняем на флешку
-	settings.Global_I2C[Name].i2c_addr.I2C_addr = 0xff;
-	settings.Global_I2C[Name].Channel_number = 0xff;
-	settings.Global_I2C[Name].TypePCB = NoInit;
-
-	settings.Global_I2C[Name].i2c_addr.led_Sett.Name_ch = 0xff;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.Current = 0xff;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.IsOn = 0xff;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.On_off = 0xff;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.PWM = 0xff;
-	settings.Global_I2C[Name].i2c_addr.led_Sett.PWM_out = 0xff;
-	//mem_spi.Write(settings);
-
-
-
-	return ret;
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	HAL_UART_DMAStop(huart);
+	rx_end = 1;
 }
 /* USER CODE END Application */

@@ -4,6 +4,7 @@
  *  Created on: 3 июл. 2023 г.
  *      Author: Ierixon-HP
  */
+
 #include "flash_spi.h"
 #include "LED.h"
 #include "lwip.h"
@@ -17,10 +18,24 @@ using namespace std;
 
 /*variables ---------------------------------------------------------*/
 extern settings_t settings;
-extern I2C_HandleTypeDef hi2c1;
+extern chName_t NameCH[MAX_CH_NAME];
+extern UART_HandleTypeDef huart1;
 extern flash mem_spi;
 //структуры для netcon
 extern struct netif gnetif;
+
+/* Typedef -----------------------------------------------------------*/
+struct mesage_t{
+	uint32_t cmd;
+	uint32_t addres_var;
+	uint32_t data_in;
+	uint32_t data_in1;
+	bool need_resp = false;
+	bool data_in_is;
+	uint32_t data_out;
+	string err; // сообщение клиенту об ошибке в сообщении
+	bool f_bool = false; // наличие ошибки в сообшении
+};
 
 //Флаги для разбора сообщения
 string f_cmd("C");
@@ -184,107 +199,184 @@ string Сommand_execution(string in_str){
 		for (int i = 0; i < count_cmd; ++i) {
 
 			switch (arr_cmd[i].cmd) {
-			case 1: // Add dev in cell
-			ret = set_i2c_dev(arr_cmd[i].addres_var, arr_cmd[i].data_in, arr_cmd[i].data_in1);
-			switch (ret) {
-			case 1:
-				arr_cmd[i].err = "out of range after D";
-				arr_cmd[i].f_bool = true;
-				break;
-			case 2:
-				arr_cmd[i].err = "out of range after N";
-				arr_cmd[i].f_bool = true;
-				break;
-			case 3:
-				arr_cmd[i].err = "out of range after A";
-				arr_cmd[i].f_bool = true;
-				break;
-			case 4:
-				arr_cmd[i].err = "err not empty cell";
-				arr_cmd[i].f_bool = true;
-				break;
-			default:
-				arr_cmd[i].err = "OK";
-				break;
-			}
-
-			break;
-			case 2: // Delet dev
-				del_i2c_dev(arr_cmd[i].data_in1);
-				arr_cmd[i].err = "OK";
-				break;
-			case 3: // Chanel on/off
-				settings.Global_I2C[arr_cmd[i].data_in1].i2c_addr.led_Sett.On_off = arr_cmd[i].data_in;
-				arr_cmd[i].err = "OK";
-				break;
-			case 4: // PWM Chanel
-				settings.Global_I2C[arr_cmd[i].data_in1].i2c_addr.led_Sett.PWM_out = arr_cmd[i].data_in;
-				arr_cmd[i].err = "OK";
-				break;
-			case 5: // PWM read
-				arr_cmd[i].data_out =  settings.Global_I2C[arr_cmd[i].data_in1].i2c_addr.led_Sett.PWM;
-				arr_cmd[i].need_resp = true;
-				arr_cmd[i].err = "OK";
-				break;
-			case 6:// Curent
-				arr_cmd[i].data_out =  settings.Global_I2C[arr_cmd[i].data_in1].i2c_addr.led_Sett.Current;
-				arr_cmd[i].need_resp = true;
-				arr_cmd[i].err = "OK";
-				break;
-			case 7:// is on
-				arr_cmd[i].data_out =  settings.Global_I2C[arr_cmd[i].data_in1].i2c_addr.led_Sett.IsOn;
-				arr_cmd[i].need_resp = true;
-				arr_cmd[i].err = "OK";
-				break;
-			case 8: // save
-				mem_spi.W25qxx_EraseSector(0);
-				osDelay(5);
-				mem_spi.Write(settings);
-				arr_cmd[i].err = "OK";
-				break;
-			case 9:// load in flash
-				settings.IP_end_from_settings = (uint8_t)arr_cmd[i].data_in;
-				arr_cmd[i].err = "OK";
-				break;
-			case 10: // Reboot
-				if(arr_cmd[i].data_in){
-					NVIC_SystemReset();
+			case 1: // Delet dev
+				if(arr_cmd[i].data_in1 == 0){
+					setRange_i2c_dev(arr_cmd[i].addres_var, arr_cmd[i].data_in);
+					mem_spi.W25qxx_EraseSector(0);
+					osDelay(5);
+					mem_spi.Write(settings);
+					arr_cmd[i].err = "OK";
+				}else if(arr_cmd[i].data_in1 == 1){
+					arr_cmd[i].err = "not available";
+				}else if(arr_cmd[i].data_in1 == 2){
+					cleanAll_i2c_dev();
+					arr_cmd[i].err = "OK";
+				}else{
+					arr_cmd[i].err = "bead param";
 				}
-				arr_cmd[i].err = "OK";
+
 				break;
-			case 11: // DHCP
-				settings.DHCPset = (uint8_t)arr_cmd[i].data_in;
-				arr_cmd[i].err = "OK";
+			case 2: // Add dev in cell
+				ret = set_i2c_dev(arr_cmd[i].addres_var, arr_cmd[i].data_in, arr_cmd[i].data_in1);
+				switch (ret) {
+				case 1:
+					arr_cmd[i].err = "out of range after D";
+					arr_cmd[i].f_bool = true;
+					break;
+				case 2:
+					arr_cmd[i].err = "out of range after N";
+					arr_cmd[i].f_bool = true;
+					break;
+				case 3:
+					arr_cmd[i].err = "out of range after A";
+					arr_cmd[i].f_bool = true;
+					break;
+				case 4:
+					arr_cmd[i].err = "err not empty cell";
+					arr_cmd[i].f_bool = true;
+					break;
+				default:
+					arr_cmd[i].err = "OK";
+					break;
+				}
+
 				break;
-			case 12: // IP
-				settings.saveIP.ip[arr_cmd[i].addres_var] = arr_cmd[i].data_in;
-				arr_cmd[i].err = "OK";
-				break;
-			case 13: // MASK
-				settings.saveIP.mask[arr_cmd[i].addres_var] = arr_cmd[i].data_in;
-				arr_cmd[i].err = "OK";
-				break;
-			case 14: // GW
-				settings.saveIP.gateway[arr_cmd[i].addres_var] = arr_cmd[i].data_in;
-				arr_cmd[i].err = "OK";
-				break;
-			case 15: // MAC
-				settings.MAC[arr_cmd[i].addres_var] = arr_cmd[i].data_in;
-				arr_cmd[i].err = "OK";
-				break;
-			case 16:
-				/*										Sensor2.change_settings = true; // включение режима настроек
-														Sensor2.Depth = arr_cmd[i].data_in;
-														Sensor2.change_settings = false; // выключение режима настроек
-														arr_cmd[i].err = "OK";
-				 */
-				arr_cmd[i].err = "Empty cmd";
-				arr_cmd[i].f_bool = true;
-				break;
-			default:
-				arr_cmd[i].err = "Command does not exist";
-				arr_cmd[i].f_bool = true;
-				break;
+				case 3: // Delet dev
+					del_Name_dev(arr_cmd[i].data_in1);
+					arr_cmd[i].err = "OK";
+					break;
+				case 4: // Chanel on/off
+					// mode set all channel
+					if (arr_cmd[i].addres_var >= 1) {
+						uint8_t c = 0;
+						for (int name = 0; name < MAX_CH_NAME; ++name) {
+							if(NameCH[name].dev != NULL){
+								c = NameCH[name].Channel_number; // get channel number for this name
+								NameCH[name].dev->ch[c].On_off = arr_cmd[i].data_in;
+							}
+						}
+						arr_cmd[i].err = "OK";
+					} else {
+						// mode set one channel
+						if(NameCH[arr_cmd[i].data_in1].dev != NULL){
+							uint8_t c = NameCH[arr_cmd[i].data_in1].Channel_number; // get channel number for this name
+							NameCH[arr_cmd[i].data_in1].dev->ch[c].On_off = arr_cmd[i].data_in;
+							arr_cmd[i].err = "OK";
+						}else{
+							arr_cmd[i].err = "NULL ptr dev";
+						}
+					}
+
+					break;
+				case 5: // PWM set to Channel
+					// mode set all channel
+					if (arr_cmd[i].addres_var >= 1) {
+						uint8_t c = 0;
+						for (int name = 0; name < MAX_CH_NAME; ++name) {
+							if(NameCH[name].dev != NULL){
+								c = NameCH[name].Channel_number; // get channel number for this name
+								NameCH[name].dev->ch[c].PWM_out = arr_cmd[i].data_in;
+							}
+						}
+						arr_cmd[i].err = "OK";
+					} else {
+						// mode set one channel
+						if(NameCH[arr_cmd[i].data_in1].dev != NULL){
+							uint8_t c = NameCH[arr_cmd[i].data_in1].Channel_number; // get channel number for this name
+							NameCH[arr_cmd[i].data_in1].dev->ch[c].PWM_out = arr_cmd[i].data_in;
+							arr_cmd[i].err = "OK";
+						}else{
+							arr_cmd[i].err = "NULL ptr dev";
+						}
+					}
+					break;
+				case 6: // PWM read from channel
+					if(NameCH[arr_cmd[i].data_in1].dev != NULL){
+						uint8_t c = NameCH[arr_cmd[i].data_in1].Channel_number; // get channel number for this name
+						arr_cmd[i].data_out =  NameCH[arr_cmd[i].data_in1].dev->ch[c].PWM;
+						arr_cmd[i].need_resp = true;
+						arr_cmd[i].err = "OK";
+					}else{
+						arr_cmd[i].err = "NULL ptr dev";
+					}
+
+					break;
+				case 7:// Curent read from channel
+					if(NameCH[arr_cmd[i].data_in1].dev != NULL){
+						uint8_t c = NameCH[arr_cmd[i].data_in1].Channel_number; // get channel number for this name
+						arr_cmd[i].data_out =  NameCH[arr_cmd[i].data_in1].dev->ch[c].Current;
+						arr_cmd[i].need_resp = true;
+						arr_cmd[i].err = "OK";
+					}else{
+						arr_cmd[i].err = "NULL ptr dev";
+					}
+
+					break;
+				case 8:// is on
+					if(NameCH[arr_cmd[i].data_in1].dev != NULL){
+						uint8_t c = NameCH[arr_cmd[i].data_in1].Channel_number; // get channel number for this name
+						arr_cmd[i].data_out =  NameCH[arr_cmd[i].data_in1].dev->ch[c].IsOn;
+						arr_cmd[i].need_resp = true;
+						arr_cmd[i].err = "OK";
+					}else{
+						arr_cmd[i].err = "NULL ptr dev";
+					}
+					break;
+				case 9: // save
+					mem_spi.W25qxx_EraseSector(0);
+					osDelay(5);
+					mem_spi.Write(settings);
+					arr_cmd[i].err = "OK";
+					break;
+				case 10:// load from flash
+					settings.IP_end_from_settings = (uint8_t)arr_cmd[i].data_in;
+					arr_cmd[i].err = "OK";
+					break;
+				case 11: // Reboot
+					if(arr_cmd[i].data_in){
+						NVIC_SystemReset();
+					}
+					arr_cmd[i].err = "OK";
+					break;
+				case 12: // DHCP
+					settings.DHCPset = (uint8_t)arr_cmd[i].data_in;
+					arr_cmd[i].err = "OK";
+					break;
+				case 13: // IP
+					settings.saveIP.ip[arr_cmd[i].addres_var] = arr_cmd[i].data_in;
+					arr_cmd[i].err = "OK";
+					break;
+				case 14: // MASK
+					settings.saveIP.mask[arr_cmd[i].addres_var] = arr_cmd[i].data_in;
+					arr_cmd[i].err = "OK";
+					break;
+				case 15: // GW
+					settings.saveIP.gateway[arr_cmd[i].addres_var] = arr_cmd[i].data_in;
+					arr_cmd[i].err = "OK";
+					break;
+				case 16: // MAC
+					settings.MAC[arr_cmd[i].addres_var] = arr_cmd[i].data_in;
+					arr_cmd[i].err = "OK";
+					break;
+				case 17:// errors
+					if(NameCH[arr_cmd[i].data_in1].dev != NULL){
+						if(arr_cmd[i].addres_var){
+							arr_cmd[i].data_out = NameCH[arr_cmd[i].data_in1].dev->ERR_counter;
+							NameCH[arr_cmd[i].data_in1].dev->ERR_counter = 0;
+						}else{
+							arr_cmd[i].data_out = NameCH[arr_cmd[i].data_in1].dev->last_ERR;
+							NameCH[arr_cmd[i].data_in1].dev->last_ERR = 0;
+						}
+						arr_cmd[i].need_resp = true;
+						arr_cmd[i].err = "OK";
+					}else{
+						arr_cmd[i].err = "NULL ptr dev";
+					}
+					break;
+				default:
+					arr_cmd[i].err = "Command does not exist";
+					arr_cmd[i].f_bool = true;
+					break;
 			}
 		}
 	}

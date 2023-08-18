@@ -1,4 +1,5 @@
 #include "flash_spi.h"
+//#include "cmsis_os.h"
 
 #if (INIT_DEBUG == 1)
 #include "string.h"
@@ -7,14 +8,14 @@ char buff[64] = {0,};
 //extern UART_HandleTypeDef huart1;
 #endif
 
-
+/*
 #if (_W25QXX_USE_FREERTOS == 1)
 #define	W25qxx_Delay(delay)		osDelay(delay)
 #include "cmsis_os.h"
 #else
 #define	W25qxx_Delay(delay)		HAL_Delay(delay)
 #endif
-
+*/
 
 
 void flash :: Read(settings_t *data){
@@ -178,7 +179,7 @@ void flash :: W25qxx_WaitForWriteEnd(void)
 }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
-uint8_t flash :: Init(SPI_HandleTypeDef *hspi, uint32_t startAddr,  pins_spi_t ChipSelect, pins_spi_t WriteProtect, pins_spi_t Hold)
+uint8_t flash :: Init(SPI_HandleTypeDef *hspi, uint32_t startAddr,  pins_spi_t ChipSelect, pins_spi_t WriteProtect, pins_spi_t Hold, bool UsedInOS)
 {
    flash :: WriteProtect = WriteProtect;
    flash :: ChipSelect = ChipSelect;
@@ -405,6 +406,18 @@ uint8_t flash :: Init(SPI_HandleTypeDef *hspi, uint32_t startAddr,  pins_spi_t C
    return 1;
 }	
 
+void flash :: SetUsedInOS(bool usedInOs) {
+	UsedInOS = usedInOs;
+
+}
+
+void flash::W25qxx_Delay(uint32_t delay) {
+	if(UsedInOS){
+		 osDelay(delay);
+	}else{
+		HAL_Delay(delay);
+	}
+}
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 void flash :: W25qxx_EraseChip(void)
 {

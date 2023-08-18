@@ -3,7 +3,7 @@
 
 
 #include "main.h"
-//#include "cmsis_os.h"
+#include "cmsis_os.h"
 
 #define DEBUG_UART               &huart1
 
@@ -98,7 +98,8 @@ class flash
    public:
     flash();
     ~flash();
-    uint8_t Init(SPI_HandleTypeDef *hspi, uint32_t startAddr,  pins_spi_t ChipSelect, pins_spi_t WriteProtect, pins_spi_t Hold);
+    uint8_t Init(SPI_HandleTypeDef *hspi, uint32_t startAddr,  pins_spi_t ChipSelect, pins_spi_t WriteProtect, pins_spi_t Hold, bool UsedInOS = false);
+    void SetUsedInOS(bool used);
     void Read(settings_t *data);
     void Write(settings_t data);
     
@@ -127,9 +128,8 @@ class flash
     void W25qxx_ReadPage(uint8_t *pBuffer, uint32_t Page_Address, uint32_t OffsetInByte, uint32_t NumByteToRead_up_to_PageSize);
     void W25qxx_ReadSector(uint8_t *pBuffer, uint32_t Sector_Address, uint32_t OffsetInByte, uint32_t NumByteToRead_up_to_SectorSize);
     void W25qxx_ReadBlock(uint8_t *pBuffer, uint32_t Block_Address, uint32_t OffsetInByte,uint32_t NumByteToRead_up_to_BlockSize);
-    
-    
-    
+
+
    private:
     uint8_t     W25qxx_Spi(uint8_t Data);
     uint32_t    W25qxx_ReadID();
@@ -137,7 +137,7 @@ class flash
     void        W25qxx_WriteDisable();
     void        W25qxx_WriteEnable();
     void        W25qxx_ReadUniqID();
-       
+    void		W25qxx_Delay(uint32_t delay);
     uint32_t StartAddres;
 
     SPI_HandleTypeDef *hspi;
@@ -146,7 +146,7 @@ class flash
     pins_spi_t Hold;
     HAL_StatusTypeDef lastStatusSPI;
     w25qxx_t w25qxx;
-    
+    bool UsedInOS;
   };
 
 
