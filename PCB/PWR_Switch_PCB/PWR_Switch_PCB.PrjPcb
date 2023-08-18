@@ -123,7 +123,83 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for PWR_Switch_PCB\Design Rule Check - PWR_Switch_PCB.html
+DocumentPath=Project Outputs for PWR_Switch_PCB\BOM\Bill of Materials-PWR_Switch_PCB.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Pick Place\Pick Place for PWR_Switch_PCB.csv
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Pick Place\Pick Place for PWR_Switch_PCB.txt
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for PWR_Switch_PCB\NC Drill\PWR_Switch_PCB-NonPlated.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for PWR_Switch_PCB\NC Drill\PWR_Switch_PCB-Plated.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for PWR_Switch_PCB\NC Drill\PWR_Switch_PCB.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GM5
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for PWR_Switch_PCB\NC Drill\PWR_Switch_PCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for PWR_Switch_PCB\Gerber\PWR_Switch_PCB.RUL
 DItemRevisionGUID=
 
 [Configuration1]

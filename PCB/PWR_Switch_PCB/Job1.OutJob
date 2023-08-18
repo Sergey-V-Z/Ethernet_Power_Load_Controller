@@ -194,7 +194,7 @@ ShowComponentParameters2=1
 GlobalBookmarks2=0
 PDFACompliance2=Disabled
 PDFVersion2=Default
-OutputFilePath3=D:\Radio\Jobe\PWR_Switch_ETH\PCB\PWR_Switch_PCB\Project Outputs for PWR_Switch_PCB\
+OutputFilePath3=D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\PWR_Switch_PCB\Project Outputs for PWR_Switch_PCB\
 ReleaseManaged3=1
 OutputBasePath3=Project Outputs for PWR_Switch_PCB
 OutputPathMedia3=
@@ -248,7 +248,7 @@ WmvQuality4=80
 [GeneratedFilesSettings]
 RelativeOutputPath2=
 OpenOutputs2=1
-RelativeOutputPath3=D:\Radio\Jobe\PWR_Switch_ETH\PCB\PWR_Switch_PCB\Project Outputs for PWR_Switch_PCB\
+RelativeOutputPath3=D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\PWR_Switch_PCB\Project Outputs for PWR_Switch_PCB\
 OpenOutputs3=1
 AddToProject3=1
 TimestampFolder3=0

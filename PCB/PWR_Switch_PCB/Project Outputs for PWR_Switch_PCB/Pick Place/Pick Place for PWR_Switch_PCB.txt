@@ -4,9 +4,9 @@ D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\PWR_Switch_PCB\Project Outputs 
 ========================================================================================================================
 File Design Information:
 
-Date:       15.08.23
-Time:       16:59
-Revision:   37644a6445352571cc417a6fa637af2c93f11e82
+Date:       16.08.23
+Time:       18:37
+Revision:   4a9dfc3522b0fa76807d2a15523fcf1f9a153af2
 Variant:    No variations
 Units used: mm
 
@@ -123,11 +123,11 @@ DD2        LM2596S-ADJ     TopLayer 11.0000mm    79.1750mm    180      "SIMPLE S
 DD1        LM2596S-ADJ     TopLayer 11.1500mm    64.4500mm    180      "SIMPLE SWITCHER® Power Converter 150 KHz 3A Step-Down Voltage Regulator, 5-pin TO-263"                      
 D12        MBRS540T3G      TopLayer 22.0500mm    79.4000mm    90       "Diode Schottky 40V 5A Surface Mount SMC"                                                                    
 D9         MBRS540T3G      TopLayer 22.0500mm    64.7000mm    90       "Diode Schottky 40V 5A Surface Mount SMC"                                                                    
-C13        NC              TopLayer 8.3750mm     25.5750mm    180      "Polarized Capacitor (Rad) 220uF 50v "                                                                       
+C13        NC              TopLayer 8.3750mm     25.5750mm    180      "Polarized Capacitor (Rad) 220uF 50v"                                                                        
 X4         PLD-10R         TopLayer 8.7300mm     98.6200mm    90       "Header, 5-Pin, Dual row"                                                                                    
 X3         PBD-10R         TopLayer 85.3700mm    98.6200mm    270      "Header, 5-Pin, Dual row"                                                                                    
 U4         IR2110S         TopLayer 73.0500mm    68.2490mm    90       "Half-Bridge Gate Driver IC Non-Inverting 16-SOIC"                                                           
 VR1        LM1117MPX-3.3   TopLayer 28.4000mm    96.4000mm    360      "800-mA 3.3-V linear voltage regulator"                                                                      
-C18        NC              TopLayer 8.3750mm     41.5000mm    180      "Polarized Capacitor (Rad) 220uF 50v "                                                                       
-C14        NC              TopLayer 46.4500mm    67.1750mm    360      "Polarized Capacitor (Rad) 220uF 50v "                                                                       
-C20        NC              TopLayer 46.5250mm    78.8250mm    360      "Polarized Capacitor (Rad) 220uF 50v "                                                                       
+C18        NC              TopLayer 8.3750mm     41.5000mm    180      "Polarized Capacitor (Rad) 220uF 50v"                                                                        
+C14        NC              TopLayer 46.4500mm    67.1750mm    360      "Polarized Capacitor (Rad) 220uF 50v"                                                                        
+C20        NC              TopLayer 46.5250mm    78.8250mm    360      "Polarized Capacitor (Rad) 220uF 50v"                                                                        

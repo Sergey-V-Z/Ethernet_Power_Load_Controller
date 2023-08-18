@@ -4,9 +4,9 @@ D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\driverPCB\Project Outputs for D
 ========================================================================================================================
 File Design Information:
 
-Date:       15.08.23
-Time:       17:01
-Revision:   37644a6445352571cc417a6fa637af2c93f11e82
+Date:       17.08.23
+Time:       11:02
+Revision:   4a9dfc3522b0fa76807d2a15523fcf1f9a153af2
 Variant:    No variations
 Units used: mm
 
@@ -158,7 +158,7 @@ R29        "0402 3K"       TopLayer    49.6000mm    102.2400mm   270      Resist
 X1         ""              TopLayer    32.5250mm    80.4500mm    180      "Header, 5-Pin"                                                               
 X2         ""              TopLayer    32.5000mm    84.0000mm    180      "Header, 5-Pin"                                                               
 VR1        LM1117MPX-3.3   TopLayer    57.0000mm    80.4000mm    180      "800-mA 15-V linear voltage regulator"                                        
-R34        "0402 10K"      TopLayer    18.9750mm    77.6750mm    0        Resistor                                                                      
+R34        "0402 100K"     TopLayer    18.9750mm    77.6750mm    0        Resistor                                                                      
 R35        "0402 10K"      TopLayer    14.5250mm    80.1000mm    180      Resistor                                                                      
 R28        04021K          TopLayer    30.7750mm    103.9250mm   180      Resistor                                                                      
 R27        "0402 1K"       TopLayer    28.3833mm    103.9250mm   180      Resistor                                                                      
@@ -170,7 +170,7 @@ C10        "0603 0.1 uF"   TopLayer    36.6000mm    77.6500mm    0        "Ceram
 C11        "0603 0.1 uF"   TopLayer    13.1750mm    83.0000mm    180      "Ceramic Capacitor"                                                           
 C13        "0603 0.1 uF"   TopLayer    29.4750mm    77.6500mm    180      "Ceramic Capacitor"                                                           
 VD1        "0805 G"        TopLayer    60.7556mm    13.7000mm    270      Green                                                                         
-R23        "0402 10K"      TopLayer    44.0750mm    77.5750mm    0        Resistor                                                                      
+R23        "0402 100K"     TopLayer    44.0750mm    77.5750mm    0        Resistor                                                                      
 R24        "0402 10K"      TopLayer    39.9000mm    77.8500mm    270      Resistor                                                                      
 R22        "0402 10K"      TopLayer    60.7500mm    8.5750mm     90       Resistor                                                                      
 R3_ch1     "0402 10K"      TopLayer    60.7500mm    63.3750mm    360      Resistor                                                                      

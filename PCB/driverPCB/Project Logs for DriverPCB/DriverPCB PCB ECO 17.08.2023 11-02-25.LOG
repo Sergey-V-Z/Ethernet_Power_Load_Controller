@@ -1,0 +1,8 @@
+Change Component Comment : Designator=R23 Old Comment=0402 10K New Comment=0402 100K
+Change Component Comment : Designator=R34 Old Comment=0402 10K New Comment=0402 100K
+Change component parameters: Designator = "R23" ("R23"); Footprint = "Resistor 0402"; UniqueID = "\BFSEXHRX" ("\BFSEXHRX")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 100K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R34" ("R34"); Footprint = "Resistor 0402"; UniqueID = "\CWLCUSZJ" ("\CWLCUSZJ")
+Change component parameters (AddParameter): Name = "Package"; Value = "0402"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0402 100K"; VariantName = "[No Variations]"
