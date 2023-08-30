@@ -46,7 +46,7 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-#define ID_STRING " Controll LED ETH ver1.2 11.07.23"
+#define ID_STRING " Controll LED ETH ver1.3 29.08.23"
 
 #define START_ADR_I2C 1
 #define MAX_ADR_DEV 16 // 16 with 0
@@ -100,6 +100,8 @@ void timoutBlink();
 #define WP_GPIO_Port GPIOD
 #define HOLD_Pin GPIO_PIN_1
 #define HOLD_GPIO_Port GPIOD
+#define DE_M_Pin GPIO_PIN_4
+#define DE_M_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
 typedef enum {

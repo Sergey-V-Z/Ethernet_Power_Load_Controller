@@ -25,7 +25,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <string.h>
 #include "flash_spi.h"
 #include "LED.h"
 #include "lwip.h"
@@ -34,8 +35,8 @@ using namespace std;
 #include "api.h"
 #include <iostream>
 #include <vector>
-//#include "hcsr04_driver.h"
 #include "device_API.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,8 +56,6 @@ using namespace std;
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-extern TIM_HandleTypeDef htim3;
-extern TIM_HandleTypeDef htim4;
 
 extern settings_t settings;
 extern chName_t NameCH[MAX_CH_NAME];
@@ -84,10 +83,19 @@ extern struct netif gnetif;
 string strIP;
 string in_str;
 
-//переменные для обшей работы
+//TCP for ModBUS
+uint8_t         input_data[129] = {0};
+uint8_t 		response[129] = {0};
+uint32_t		SizeInModBus = 0;
+struct netconn 	connectionForModBUS , newconnectionForModBUS;
+struct netconn 	*connMB = &connectionForModBUS, *newconnMB = &newconnectionForModBUS; //contains info about connection inc. type, port, buf pointers etc.
+
+//переменные переферии
 uint32_t Start = 0;
 extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
 extern flash mem_spi;
+
 
 //переменные для тестов
 
@@ -98,12 +106,11 @@ uint8_t txRedy = 1;
 osThreadId MainTaskHandle;
 osThreadId LEDHandle;
 osThreadId ethTasHandle;
-osMutexId s2DistanceMutexHandle;
-osMutexId mutexADCHandle;
-osMutexId s1DistanceMutexHandle;
-osMutexId setMutexHandle;
+osThreadId MBRTUTaskHandle;
+osThreadId MBETHTaskHandle;
 osSemaphoreId ADC_endHandle;
 osSemaphoreId ADC_end2Handle;
+osSemaphoreId Resive_USARTHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -113,6 +120,8 @@ osSemaphoreId ADC_end2Handle;
 void mainTask(void const * argument);
 void led(void const * argument);
 void eth_Task(void const * argument);
+void mbrtuTask(void const * argument);
+void mbethTask(void const * argument);
 
 extern void MX_LWIP_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -134,72 +143,68 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
 /* USER CODE END GET_IDLE_TASK_MEMORY */
 
 /**
-  * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
-  */
+ * @brief  FreeRTOS initialization
+ * @param  None
+ * @retval None
+ */
 void MX_FREERTOS_Init(void) {
-  /* USER CODE BEGIN Init */
+	/* USER CODE BEGIN Init */
 
-  /* USER CODE END Init */
-  /* Create the mutex(es) */
-  /* definition and creation of s2DistanceMutex */
-  osMutexDef(s2DistanceMutex);
-  s2DistanceMutexHandle = osMutexCreate(osMutex(s2DistanceMutex));
+	/* USER CODE END Init */
 
-  /* definition and creation of mutexADC */
-  osMutexDef(mutexADC);
-  mutexADCHandle = osMutexCreate(osMutex(mutexADC));
-
-  /* definition and creation of s1DistanceMutex */
-  osMutexDef(s1DistanceMutex);
-  s1DistanceMutexHandle = osMutexCreate(osMutex(s1DistanceMutex));
-
-  /* definition and creation of setMutex */
-  osMutexDef(setMutex);
-  setMutexHandle = osMutexCreate(osMutex(setMutex));
-
-  /* USER CODE BEGIN RTOS_MUTEX */
+	/* USER CODE BEGIN RTOS_MUTEX */
 	/* add mutexes, ... */
-  /* USER CODE END RTOS_MUTEX */
+	/* USER CODE END RTOS_MUTEX */
 
-  /* Create the semaphores(s) */
-  /* definition and creation of ADC_end */
-  osSemaphoreDef(ADC_end);
-  ADC_endHandle = osSemaphoreCreate(osSemaphore(ADC_end), 1);
+	/* Create the semaphores(s) */
+	/* definition and creation of ADC_end */
+	osSemaphoreDef(ADC_end);
+	ADC_endHandle = osSemaphoreCreate(osSemaphore(ADC_end), 1);
 
-  /* definition and creation of ADC_end2 */
-  osSemaphoreDef(ADC_end2);
-  ADC_end2Handle = osSemaphoreCreate(osSemaphore(ADC_end2), 1);
+	/* definition and creation of ADC_end2 */
+	osSemaphoreDef(ADC_end2);
+	ADC_end2Handle = osSemaphoreCreate(osSemaphore(ADC_end2), 1);
 
-  /* USER CODE BEGIN RTOS_SEMAPHORES */
+	/* definition and creation of Resive_USART */
+	osSemaphoreDef(Resive_USART);
+	Resive_USARTHandle = osSemaphoreCreate(osSemaphore(Resive_USART), 1);
+
+	/* USER CODE BEGIN RTOS_SEMAPHORES */
 	/* add semaphores, ... */
-  /* USER CODE END RTOS_SEMAPHORES */
+	/* USER CODE END RTOS_SEMAPHORES */
 
-  /* USER CODE BEGIN RTOS_TIMERS */
+	/* USER CODE BEGIN RTOS_TIMERS */
 	/* start timers, add new ones, ... */
-  /* USER CODE END RTOS_TIMERS */
+	/* USER CODE END RTOS_TIMERS */
 
-  /* USER CODE BEGIN RTOS_QUEUES */
+	/* USER CODE BEGIN RTOS_QUEUES */
 	/* add queues, ... */
-  /* USER CODE END RTOS_QUEUES */
+	/* USER CODE END RTOS_QUEUES */
 
-  /* Create the thread(s) */
-  /* definition and creation of MainTask */
-  osThreadDef(MainTask, mainTask, osPriorityNormal, 0, 256);
-  MainTaskHandle = osThreadCreate(osThread(MainTask), NULL);
+	/* Create the thread(s) */
+	/* definition and creation of MainTask */
+	osThreadDef(MainTask, mainTask, osPriorityNormal, 0, 256);
+	MainTaskHandle = osThreadCreate(osThread(MainTask), NULL);
 
-  /* definition and creation of LED */
-  osThreadDef(LED, led, osPriorityNormal, 0, 128);
-  LEDHandle = osThreadCreate(osThread(LED), NULL);
+	/* definition and creation of LED */
+	osThreadDef(LED, led, osPriorityNormal, 0, 128);
+	LEDHandle = osThreadCreate(osThread(LED), NULL);
 
-  /* definition and creation of ethTas */
-  osThreadDef(ethTas, eth_Task, osPriorityNormal, 0, 768);
-  ethTasHandle = osThreadCreate(osThread(ethTas), NULL);
+	/* definition and creation of ethTas */
+	osThreadDef(ethTas, eth_Task, osPriorityNormal, 0, 768);
+	ethTasHandle = osThreadCreate(osThread(ethTas), NULL);
 
-  /* USER CODE BEGIN RTOS_THREADS */
+	/* definition and creation of MBRTUTask */
+	osThreadDef(MBRTUTask, mbrtuTask, osPriorityNormal, 0, 256);
+	MBRTUTaskHandle = osThreadCreate(osThread(MBRTUTask), NULL);
+
+	/* definition and creation of MBETHTask */
+	osThreadDef(MBETHTask, mbethTask, osPriorityNormal, 0, 512);
+	MBETHTaskHandle = osThreadCreate(osThread(MBETHTask), NULL);
+
+	/* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
-  /* USER CODE END RTOS_THREADS */
+	/* USER CODE END RTOS_THREADS */
 
 }
 
@@ -212,9 +217,9 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_mainTask */
 void mainTask(void const * argument)
 {
-  /* init code for LWIP */
-  MX_LWIP_Init();
-  /* USER CODE BEGIN mainTask */
+	/* init code for LWIP */
+	MX_LWIP_Init();
+	/* USER CODE BEGIN mainTask */
 	HAL_StatusTypeDef status1;
 	//uint8_t channelForName = 0;
 	uint16_t Address = 0;
@@ -223,8 +228,6 @@ void mainTask(void const * argument)
 	{
 
 		if(1){
-
-
 			for (int var = 0; var < MAX_ADR_DEV; ++var) {
 
 				if((settings.devices[var].Addr >= START_ADR_I2C) && (settings.devices[var].Addr <= (START_ADR_I2C + MAX_ADR_DEV))){
@@ -322,7 +325,7 @@ void mainTask(void const * argument)
 
 		//osDelay(10);
 	}
-  /* USER CODE END mainTask */
+	/* USER CODE END mainTask */
 }
 
 /* USER CODE BEGIN Header_led */
@@ -334,7 +337,7 @@ void mainTask(void const * argument)
 /* USER CODE END Header_led */
 void led(void const * argument)
 {
-  /* USER CODE BEGIN led */
+	/* USER CODE BEGIN led */
 	/* Infinite loop */
 	HAL_GPIO_WritePin(R_GPIO_Port, R_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(G_GPIO_Port, G_Pin, GPIO_PIN_SET);
@@ -391,7 +394,7 @@ void led(void const * argument)
 		//taskYIELD();
 		//osDelayUntil(&tickcount, 1); // задача будет вызываься ровро через 1 милисекунду
 	}
-  /* USER CODE END led */
+	/* USER CODE END led */
 }
 
 /* USER CODE BEGIN Header_eth_Task */
@@ -403,7 +406,7 @@ void led(void const * argument)
 /* USER CODE END Header_eth_Task */
 void eth_Task(void const * argument)
 {
-  /* USER CODE BEGIN eth_Task */
+	/* USER CODE BEGIN eth_Task */
 
 	while(gnetif.ip_addr.addr == 0){osDelay(1);}	//ждем получение адреса
 	LED_IPadr.LEDon();
@@ -466,27 +469,136 @@ void eth_Task(void const * argument)
 		}
 		osDelay(1);
 	}
-  /* USER CODE END eth_Task */
+	/* USER CODE END eth_Task */
+}
+
+/* USER CODE BEGIN Header_mbrtuTask */
+/**
+ * @brief Function implementing the MBRTUTask thread.
+ * @param argument: Not used
+ * @retval None
+ */
+/* USER CODE END Header_mbrtuTask */
+void mbrtuTask(void const * argument)
+{
+	/* USER CODE BEGIN mbrtuTask */
+	HAL_StatusTypeDef status1;
+
+	status1 = HAL_UARTEx_ReceiveToIdle_IT(&huart2, response, 128);// Read data
+
+	/* Infinite loop */
+	for(;;)
+	{
+
+		// ждем event от USART
+		osSemaphoreWait(Resive_USARTHandle,osWaitForever);
+		if(newconnMB->type == netconn_type::NETCONN_TCP){
+			netconn_write(newconnMB,response,SizeInModBus,NETCONN_COPY);
+			SizeInModBus = 0;
+		}
+
+		//osDelay(1000);
+	}
+	/* USER CODE END mbrtuTask */
+}
+
+/* USER CODE BEGIN Header_mbethTask */
+/**
+ * @brief Function implementing the MBETHTask thread.
+ * @param argument: Not used
+ * @retval None
+ */
+/* USER CODE END Header_mbethTask */
+void mbethTask(void const * argument)
+{
+	/* USER CODE BEGIN mbethTask */
+	while(gnetif.ip_addr.addr == 0){osDelay(1);}	//ждем получение адреса
+
+	//TCP connection vars
+	err_t                err, accept_err;
+	struct netbuf        buffer;
+	struct netbuf 	*buf = &buffer; //bufferized input data
+	void 		*in_data = NULL;
+	uint16_t 		data_size = 0;
+
+	//osSemaphoreWait(ModBusEndHandle,1000);
+	//int32_t SemRet = 0;
+	//sizeH = xPortGetMinimumEverFreeHeapSize();
+	/* Infinite loop */
+	for(;;)
+	{
+		connMB = netconn_new(NETCONN_TCP);
+		if (connMB!=NULL)
+		{
+			err = netconn_bind(connMB,NULL,8010);//assign port number to connection
+			if (err==ERR_OK)
+			{
+				netconn_listen(connMB);//set port to listening mode
+				while(1)
+				{
+					accept_err=netconn_accept(connMB,&newconnMB);//suspend until new connection
+					if (accept_err==ERR_OK)
+					{
+						while (netconn_recv(newconnMB,&buf)==ERR_OK)//suspend until data received
+						{
+							do
+							{
+								netbuf_data(buf,&in_data,&data_size);//get pointer and data size of the buffer
+								memcpy((void*)input_data,in_data,data_size);
+
+								//netconn_write(newconnMB,response,4,NETCONN_COPY);
+								HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_SET); //включить на передачу
+								HAL_UART_Transmit(&huart2, input_data, data_size, 100); //Отправляем данные в USART
+								HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_RESET); //включить на прием
+
+							} while (netbuf_next(buf) >= 0);
+							netbuf_delete(buf);
+						}
+						netconn_close(newconnMB);
+						netconn_delete(newconnMB);
+					} else netconn_delete(newconnMB);
+					osDelay(20);
+				}
+			}
+		}
+		osDelay(1000);
+	}
+	/* USER CODE END mbethTask */
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 
-void HAL_TIM_IC_CaptureCallback (TIM_HandleTypeDef *htim)
-{
-	if (htim->Instance == TIM4) {
-		//Sensor2._acknowledgeChannelCapture();
-	}
-	if (htim->Instance == TIM3) {
-		//Sensor1._acknowledgeChannelCapture();
-	}
-}
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 
+	if(huart->Instance == USART1){
+
+	}
+	if(huart->Instance == USART2){
+
+	}
+
 }
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-	HAL_UART_DMAStop(huart);
-	rx_end = 1;
+
+	if(huart->Instance == USART1){
+		HAL_UART_DMAStop(huart);
+		rx_end = 1;
+	}
+	if(huart->Instance == USART2){
+
+
+	}
+
+}
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
+	if(huart->Instance == USART2){
+		SizeInModBus = Size;
+		HAL_UARTEx_ReceiveToIdle_IT(&huart2, response, 128);// Read data
+		osSemaphoreRelease(Resive_USARTHandle);
+	}
 }
 /* USER CODE END Application */
