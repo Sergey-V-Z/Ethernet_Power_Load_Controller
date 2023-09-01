@@ -1,0 +1,32 @@
+Board Information Report
+Filename     : D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\PWR_Switch_PCB\PWR_Switch_PCB.PcbDoc
+Date         : 31.08.2023
+Time         : 10:07:46
+Time Elapsed : 00:00:00
+
+Pad Solder Mask, Count
+    0mm, 8
+    0.06mm, 50
+    0.1016mm, 330
+count : 3
+
+Pad Paste Mask, Count
+    -2mm, 8
+    0mm, 380
+count : 2
+
+Pad Pwr/Gnd Expansion, Count
+    0.508mm, 388
+count : 1
+
+Pad Relief Conductor Width, Count
+    0.254mm, 388
+count : 1
+
+Pad Relief Air Gap, Count
+    0.254mm, 388
+count : 1
+
+Pad Relief Entries, Count
+    4, 388
+count : 1

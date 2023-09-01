@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=+12v Pin=U3-6
+Removed Pin From Net: NetName=+12v Pin=U4-6
+Removed Pin From Net: NetName=+12v Pin=U5-6
+Change Component Comment : Designator=VT1 Old Comment=sot23 BSS138  New Comment=sot23 BSS138
+Change Component Comment : Designator=VT2 Old Comment=sot23 BSS138  New Comment=sot23 BSS138
+Change Component Comment : Designator=VT3 Old Comment=sot23 BSS138  New Comment=sot23 BSS138
+Change Component Comment : Designator=VT4 Old Comment=sot23 BSS138  New Comment=sot23 BSS138
+Change Component Comment : Designator=VT5 Old Comment=sot23 BSS138  New Comment=sot23 BSS138
+Change Component Comment : Designator=VT6 Old Comment=sot23 BSS138  New Comment=sot23 BSS138
+Added Pin To Net: NetName=GND Pin=U3-6
+Added Pin To Net: NetName=GND Pin=U4-6
+Added Pin To Net: NetName=GND Pin=U5-6
