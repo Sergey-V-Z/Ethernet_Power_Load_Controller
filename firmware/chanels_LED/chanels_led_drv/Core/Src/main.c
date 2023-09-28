@@ -114,23 +114,23 @@ int main(void)
 	{SET_BIT(OwnAddr,1<<0);}
 	else {CLEAR_BIT(OwnAddr,1<<0);}
 	//Bit1
-	if (LL_GPIO_IsInputPinSet(A1_PWM_CH2_GPIO_Port, A1_PWM_CH2_Pin))
+	if (LL_GPIO_IsInputPinSet(A1_GPIO_Port, A1_Pin))
 	{SET_BIT(OwnAddr,1<<1);}
 	else {CLEAR_BIT(OwnAddr,1<<1);}
 	//Bit2
-	if (LL_GPIO_IsInputPinSet(A2_PWM_CH1_GPIO_Port, A2_PWM_CH1_Pin))
+	if (LL_GPIO_IsInputPinSet(A2_GPIO_Port, A2_Pin))
 	{SET_BIT(OwnAddr,1<<2);}
 	else {CLEAR_BIT(OwnAddr,1<<2);}
 	//Bit3
-	if (LL_GPIO_IsInputPinSet(A3_LED_GPIO_Port, A3_LED_Pin))
+	if (LL_GPIO_IsInputPinSet(A3_GPIO_Port, A3_Pin))
 	{SET_BIT(OwnAddr,1<<3);}
 	else {CLEAR_BIT(OwnAddr,1<<3);}
 	//Bit4
-	//SET_BIT(OwnAddr,1<<4);
+	if (LL_GPIO_IsInputPinSet(A4_GPIO_Port, A4_Pin))
+	{SET_BIT(OwnAddr,1<<4);}
+	else {CLEAR_BIT(OwnAddr,1<<4);}
 
 	LL_GPIO_DeInit(A0_PWM_CH4_GPIO_Port);
-	LL_GPIO_DeInit(A1_PWM_CH2_GPIO_Port);
-	LL_GPIO_DeInit(A3_LED_GPIO_Port);
 
 
   /* USER CODE END SysInit */
@@ -299,14 +299,14 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
-	HAL_GPIO_TogglePin(A3_LED_GPIO_Port, A3_LED_Pin);
+	HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 	//HAL_UART_Receive_IT(huart, (uint8_t*)aRxBuffer, 15);
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 
 	rxEnd = 1;
-	HAL_GPIO_TogglePin(A3_LED_GPIO_Port, A3_LED_Pin);
+	HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 	HAL_UART_Transmit_IT(huart, (uint8_t*)aTxBuffer, 24);
 	HAL_UART_Receive_DMA(&huart1, (uint8_t*)aRxBuffer, 16);
 
@@ -355,32 +355,12 @@ void IN_GPIO_Init(void)
 	/**/
 	LL_GPIO_ResetOutputPin(A0_PWM_CH4_GPIO_Port, A0_PWM_CH4_Pin);
 
-	/**/
-	LL_GPIO_ResetOutputPin(A1_PWM_CH2_GPIO_Port, A1_PWM_CH2_Pin);
-
-	/**/
-	LL_GPIO_ResetOutputPin(A2_PWM_CH1_GPIO_Port, A2_PWM_CH1_Pin);
-
-	/**/
-	LL_GPIO_ResetOutputPin(A3_LED_GPIO_Port, A3_LED_Pin);
 
 	/**/
 	GPIO_InitStruct.Pin = A0_PWM_CH4_Pin;
 	GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT;
-	GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+	GPIO_InitStruct.Pull = LL_GPIO_PULL_DOWN;
 	LL_GPIO_Init(A0_PWM_CH4_GPIO_Port, &GPIO_InitStruct);
-
-	/**/
-	GPIO_InitStruct.Pin = A1_PWM_CH2_Pin;
-	LL_GPIO_Init(A1_PWM_CH2_GPIO_Port, &GPIO_InitStruct);
-
-	/**/
-	GPIO_InitStruct.Pin = A1_PWM_CH2_Pin;
-	LL_GPIO_Init(A2_PWM_CH1_GPIO_Port, &GPIO_InitStruct);
-
-	/**/
-	GPIO_InitStruct.Pin = A3_LED_Pin;
-	LL_GPIO_Init(A3_LED_GPIO_Port, &GPIO_InitStruct);
 
 }
 

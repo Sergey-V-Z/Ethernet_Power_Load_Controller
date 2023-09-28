@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=GND Pin=R43-1
+Removed Pin From Net: NetName=NetIC2_3 Pin=R43-2
+Removed Pin From Net: NetName=GND Pin=R44-1
+Removed Pin From Net: NetName=NetIC2_2 Pin=R44-2
+Removed Member From Class: ClassName=control_PWR_PCB Member=R43
+Removed Member From Class: ClassName=control_PWR_PCB Member=R44
+Added Member To Class: ClassName=control_PWR_PCB Member=Component R35 0603 220 Om

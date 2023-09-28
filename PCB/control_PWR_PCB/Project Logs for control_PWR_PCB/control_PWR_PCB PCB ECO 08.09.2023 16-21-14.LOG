@@ -1,0 +1,26 @@
+Added Component: Designator=R43(RESCHIP0603)
+Add component (AddParameter): Name = "CompType"; Value = "Resistor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0603 NC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R44(RESCHIP0603)
+Add component (AddParameter): Name = "CompType"; Value = "Resistor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance_Percent"; Value = "{Tolerance_Percent}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0603 NC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetIC2_3 Pin=R43-1
+Added Pin To Net: NetName=+3.3v Pin=R43-2
+Added Pin To Net: NetName=NetIC2_2 Pin=R44-1
+Added Pin To Net: NetName=+3.3v Pin=R44-2
+Added Member To Class: ClassName=control_PWR_PCB Member=Component R43 0603 NC
+Added Member To Class: ClassName=control_PWR_PCB Member=Component R44 0603 NC

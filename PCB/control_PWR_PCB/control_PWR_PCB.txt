@@ -1,7 +1,7 @@
 Board Information Report
 Filename     : D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\control_PWR_PCB\control_PWR_PCB.PcbDoc
-Date         : 31.08.2023
-Time         : 10:07:17
+Date         : 21.09.2023
+Time         : 14:19:55
 Time Elapsed : 00:00:00
 
 Pad Solder Mask, Count
