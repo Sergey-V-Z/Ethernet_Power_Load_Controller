@@ -180,14 +180,14 @@ int main(void)
 			}
 		}
 
-		if(en1) htim3.Instance->CCR4 = PWM1;
-		else htim3.Instance->CCR4 = 0;
+		if(en1) htim3.Instance->CCR1 = PWM1;
+		else htim3.Instance->CCR1 = 0;
 
 		if(en2) htim3.Instance->CCR2 = PWM2;
 		else htim3.Instance->CCR2 = 0;
 
-		if(en3) htim3.Instance->CCR1 = PWM3;
-		else htim3.Instance->CCR1 = 0;
+		if(en3) htim3.Instance->CCR4 = PWM3;
+		else htim3.Instance->CCR4 = 0;
 
 
 
@@ -206,10 +206,10 @@ int main(void)
 			aTxBuffer[18] = adc_buffer[0]&0xFF;
 			aTxBuffer[19] = (adc_buffer[0]>>8)&0xFF;
 
-			aTxBuffer[0] = htim3.Instance->CCR4 & 0xFF;
-			aTxBuffer[1] = (htim3.Instance->CCR4 >> 8) & 0xFF;
-			aTxBuffer[2] = (htim3.Instance->CCR4 >> 16) & 0xFF;
-			aTxBuffer[3] = (htim3.Instance->CCR4 >> 24) & 0xFF;
+			aTxBuffer[0] = htim3.Instance->CCR1 & 0xFF;
+			aTxBuffer[1] = (htim3.Instance->CCR1 >> 8) & 0xFF;
+			aTxBuffer[2] = (htim3.Instance->CCR1 >> 16) & 0xFF;
+			aTxBuffer[3] = (htim3.Instance->CCR1 >> 24) & 0xFF;
 			aTxBuffer[6] = en1;
 
 			aTxBuffer[7] = htim3.Instance->CCR2 & 0xFF;
@@ -218,10 +218,10 @@ int main(void)
 			aTxBuffer[10] = (htim3.Instance->CCR2 >> 24) & 0xFF;
 			aTxBuffer[13] = en2;
 
-			aTxBuffer[14] = htim3.Instance->CCR1 & 0xFF;
-			aTxBuffer[15] = (htim3.Instance->CCR1 >> 8) & 0xFF;
-			aTxBuffer[16] = (htim3.Instance->CCR1 >> 16) & 0xFF;
-			aTxBuffer[17] = (htim3.Instance->CCR1 >> 24) & 0xFF;
+			aTxBuffer[14] = htim3.Instance->CCR4 & 0xFF;
+			aTxBuffer[15] = (htim3.Instance->CCR4 >> 8) & 0xFF;
+			aTxBuffer[16] = (htim3.Instance->CCR4 >> 16) & 0xFF;
+			aTxBuffer[17] = (htim3.Instance->CCR4 >> 24) & 0xFF;
 			aTxBuffer[20] = en3;
 			aTxBuffer[21] = OwnAddr;
 			aTxBuffer[22] = 10; // Type
