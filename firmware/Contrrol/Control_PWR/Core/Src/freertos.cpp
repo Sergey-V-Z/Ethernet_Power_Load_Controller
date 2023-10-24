@@ -36,7 +36,7 @@ using namespace std;
 #include <iostream>
 #include <vector>
 #include "device_API.h"
-
+#include "mbcrc.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -84,8 +84,9 @@ string strIP;
 string in_str;
 
 //TCP for ModBUS
-uint8_t         input_data[129] = {0};
-uint8_t 		response[129] = {0};
+uint8_t         input_tcp_data[256] = {0};
+uint8_t 		response[260] = {0};
+uint8_t 		Modbut_to_TCP[260] = {0};
 uint32_t		SizeInModBus = 0;
 struct netconn 	connectionForModBUS , newconnectionForModBUS;
 struct netconn 	*connMB = &connectionForModBUS, *newconnMB = &newconnectionForModBUS; //contains info about connection inc. type, port, buf pointers etc.
@@ -485,15 +486,31 @@ void mbrtuTask(void const * argument)
 	HAL_StatusTypeDef status1;
 
 	status1 = HAL_UARTEx_ReceiveToIdle_IT(&huart2, response, 128);// Read data
-
+    uint16_t usCRC16;
 	/* Infinite loop */
 	for(;;)
 	{
 
 		// ждем event от USART
 		osSemaphoreWait(Resive_USARTHandle,osWaitForever);
+		// если соеденение все еще установленно
 		if(newconnMB->type == netconn_type::NETCONN_TCP){
+			// проверяем crc
+			usCRC16 = usMBCRC16(response, SizeInModBus-2);
+			if(response[SizeInModBus-1] != ( uint8_t )( usCRC16 & 0xFF )){
+				continue;
+			}
+			if(response[SizeInModBus] == ( uint8_t )( usCRC16 >> 8 )){
+				continue;
+			}
+			// собираем сообщение
+			*(&Modbut_to_TCP[0]) = (uint32_t)0;
+			*(&Modbut_to_TCP[4]) = (uint16_t)SizeInModBus-2;
+			memcpy(&Modbut_to_TCP[6], response, SizeInModBus -2);
+
 			netconn_write(newconnMB,response,SizeInModBus,NETCONN_COPY);
+			SizeInModBus = 0;
+		}else{
 			SizeInModBus = 0;
 		}
 
@@ -520,7 +537,8 @@ void mbethTask(void const * argument)
 	struct netbuf 	*buf = &buffer; //bufferized input data
 	void 		*in_data = NULL;
 	uint16_t 		data_size = 0;
-
+	uint8_t			mb_tcp_head[6];
+	uint16_t usCRC16;
 	//osSemaphoreWait(ModBusEndHandle,1000);
 	//int32_t SemRet = 0;
 	//sizeH = xPortGetMinimumEverFreeHeapSize();
@@ -530,7 +548,7 @@ void mbethTask(void const * argument)
 		connMB = netconn_new(NETCONN_TCP);
 		if (connMB!=NULL)
 		{
-			err = netconn_bind(connMB,NULL,8010);//assign port number to connection
+			err = netconn_bind(connMB,NULL,502);//assign port number to connection
 			if (err==ERR_OK)
 			{
 				netconn_listen(connMB);//set port to listening mode
@@ -544,11 +562,27 @@ void mbethTask(void const * argument)
 							do
 							{
 								netbuf_data(buf,&in_data,&data_size);//get pointer and data size of the buffer
-								memcpy((void*)input_data,in_data,data_size);
 
-								//netconn_write(newconnMB,response,4,NETCONN_COPY);
+
+								// вырезать данные для модбаса
+								memcpy(mb_tcp_head, in_data, 6); // копируем заголовок
+								memcpy((void*)input_tcp_data, ((uint8_t*)in_data)+6, data_size-6);
+
+								// проверить пакет на длинну
+								if( *((uint16_t*)&mb_tcp_head[4]) >= 254 ){
+									//netconn_write(newconnMB,response,4,NETCONN_COPY);
+									return;
+								}
+
+								// расчитать crc
+								usCRC16 = usMBCRC16(input_tcp_data,data_size-8);
+								input_tcp_data[data_size-8] = ( uint8_t )( usCRC16 & 0xFF );
+								input_tcp_data[data_size-7] = ( uint8_t )( usCRC16 >> 8 );
+
+								// отправить
+
 								HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_SET); //включить на передачу
-								HAL_UART_Transmit(&huart2, input_data, data_size, 100); //Отправляем данные в USART
+								HAL_UART_Transmit(&huart2, input_tcp_data, data_size-6, 100); //Отправляем данные в USART
 								HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_RESET); //включить на прием
 
 							} while (netbuf_next(buf) >= 0);
