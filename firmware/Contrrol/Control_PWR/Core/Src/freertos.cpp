@@ -100,7 +100,7 @@ uint16_t Start_index = 0;
 uint8_t         input_tcp_data[256] = {0};
 uint8_t 		response[260] = {0};
 uint8_t 		Modbut_to_TCP[260] = {0};
-uint32_t		SizeInModBus = 0;
+uint16_t		SizeInModBus = 0;
 struct netconn 	connectionForModBUS , newconnectionForModBUS;
 struct netconn 	*connMB = &connectionForModBUS, *newconnMB = &newconnectionForModBUS; //contains info about connection inc. type, port, buf pointers etc.
 
@@ -525,19 +525,24 @@ void mbrtuTask(void const * argument)
 		// если соеденение все еще установленно
 		if(newconnMB->type == netconn_type::NETCONN_TCP){
 			// проверяем crc
-			usCRC16 = usMBCRC16(response, (uint16_t)SizeInModBus-2);
-			if(response[SizeInModBus-1] != ( uint8_t )( usCRC16 & 0xFF )){
+			usCRC16 = usMBCRC16(response, SizeInModBus-2);
+			if(response[SizeInModBus-2] != ( uint8_t )( usCRC16 & 0xFF )){
 				continue;
 			}
-			if(response[SizeInModBus] == ( uint8_t )( usCRC16 >> 8 )){
+			if(response[SizeInModBus-1] != ( uint8_t )( usCRC16 >> 8 )){
 				continue;
 			}
 			// собираем сообщение
-			*(&Modbut_to_TCP[0]) = (uint32_t)0;
-			*(&Modbut_to_TCP[4]) = (uint16_t)SizeInModBus-2;
-			memcpy(&Modbut_to_TCP[6], response, SizeInModBus -2);
+			Modbut_to_TCP[0] = 0;
+			Modbut_to_TCP[1] = 0;
+			Modbut_to_TCP[2] = 0;
+			Modbut_to_TCP[3] = 0;
+			Modbut_to_TCP[4] = (uint8_t) ((SizeInModBus-2) >> 8);
+			Modbut_to_TCP[5] = (uint8_t) ((SizeInModBus-2) & 0xFF);
 
-			netconn_write(newconnMB,response,SizeInModBus,NETCONN_COPY);
+			memcpy(&Modbut_to_TCP[6], response, SizeInModBus-2);
+
+			netconn_write(newconnMB, Modbut_to_TCP, 4+(SizeInModBus), NETCONN_COPY);
 			SizeInModBus = 0;
 		}else{
 			SizeInModBus = 0;
@@ -597,21 +602,24 @@ void mbethTask(void const * argument)
 								memcpy(mb_tcp_head, in_data, 6); // копируем заголовок
 								memcpy((void*)input_tcp_data, ((uint8_t*)in_data)+6, data_size-6);
 
+								uint16_t len = mb_tcp_head[4] << 8;
+								len |= mb_tcp_head[5];
+
 								// проверить пакет на длинну
-								if( *((uint16_t*)&mb_tcp_head[4]) >= 254 ){
+								if( len >= 254 ){
 									//netconn_write(newconnMB,response,4,NETCONN_COPY);
 									return;
 								}
 
 								// расчитать crc
-								usCRC16 = usMBCRC16(input_tcp_data, data_size-8);
-								input_tcp_data[data_size-8] = ( uint8_t )( usCRC16 & 0xFF );
-								input_tcp_data[data_size-7] = ( uint8_t )( usCRC16 >> 8 );
+								usCRC16 = usMBCRC16(input_tcp_data,data_size-6);
+								input_tcp_data[data_size-6] = ( uint8_t )( usCRC16 & 0xFF );
+								input_tcp_data[data_size-5] = ( uint8_t )( usCRC16 >> 8 );
 
 								// отправить
 
 								HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_SET); //включить на передачу
-								HAL_UART_Transmit(&huart2, input_tcp_data, data_size-6, 100); //Отправляем данные в USART
+								HAL_UART_Transmit(&huart2, input_tcp_data, data_size-4, 100); //Отправляем данные в USART
 								HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_RESET); //включить на прием
 
 							} while (netbuf_next(buf) >= 0);
