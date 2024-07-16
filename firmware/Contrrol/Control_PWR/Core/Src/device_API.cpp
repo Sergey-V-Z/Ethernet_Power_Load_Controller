@@ -13,16 +13,15 @@ using namespace std;
 #include "api.h"
 #include <iostream>
 #include <vector>
-#include "hcsr04_driver.h"
 #include "device_API.h"
 
 /*variables ---------------------------------------------------------*/
 extern settings_t settings;
 extern chName_t NameCH[MAX_CH_NAME];
-extern UART_HandleTypeDef huart1;
+//extern UART_HandleTypeDef huart1;
 extern flash mem_spi;
 //структуры для netcon
-extern struct netif gnetif;
+//extern struct netif gnetif;
 
 /* Typedef -----------------------------------------------------------*/
 struct mesage_t{
@@ -220,19 +219,15 @@ string Сommand_execution(string in_str){
 				ret = set_i2c_dev(arr_cmd[i].addres_var, arr_cmd[i].data_in, arr_cmd[i].data_in1);
 				switch (ret) {
 				case 1:
-					arr_cmd[i].err = "out of range after D";
+					arr_cmd[i].err = "err not valid chanel data";
 					arr_cmd[i].f_bool = true;
 					break;
 				case 2:
-					arr_cmd[i].err = "out of range after N";
+					arr_cmd[i].err = "err not empty cell";
 					arr_cmd[i].f_bool = true;
 					break;
 				case 3:
-					arr_cmd[i].err = "out of range after A";
-					arr_cmd[i].f_bool = true;
-					break;
-				case 4:
-					arr_cmd[i].err = "err not empty cell";
+					arr_cmd[i].err = "err not valid addres";
 					arr_cmd[i].f_bool = true;
 					break;
 				default:

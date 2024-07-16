@@ -247,10 +247,16 @@ static void low_level_init(struct netif *netif)
   #endif /* LWIP_ARP */
 
   /* create a binary semaphore used for informing ethernetif of frame reception */
-  RxPktSemaphore = xSemaphoreCreateBinary();
+  osSemaphoreDef(RxSem);
+  RxPktSemaphore = osSemaphoreCreate(osSemaphore(RxSem), 1);
 
   /* create a binary semaphore used for informing ethernetif of frame transmission */
-  TxPktSemaphore = xSemaphoreCreateBinary();
+  osSemaphoreDef(TxSem);
+  TxPktSemaphore = osSemaphoreCreate(osSemaphore(TxSem), 1);
+
+  /* Decrease the semaphore's initial count from 1 to 0 */
+  osSemaphoreWait(RxPktSemaphore, 0);
+  osSemaphoreWait(TxPktSemaphore, 0);
 
   /* create the task that handles the ETH_MAC */
 /* USER CODE BEGIN OS_THREAD_DEF_CREATE_CMSIS_RTOS_V1 */
@@ -382,13 +388,16 @@ static err_t low_level_output(struct netif *netif, struct pbuf *p)
 
   pbuf_ref(p);
 
-  HAL_ETH_Transmit_IT(&heth, &TxConfig);
-  while(osSemaphoreWait(TxPktSemaphore, TIME_WAITING_FOR_INPUT)!=osOK)
+  if (HAL_ETH_Transmit_IT(&heth, &TxConfig) == HAL_OK) {
+    while(osSemaphoreWait(TxPktSemaphore, TIME_WAITING_FOR_INPUT)!=osOK)
 
-  {
+    {
+    }
+
+    HAL_ETH_ReleaseTxPacket(&heth);
+  } else {
+    pbuf_free(p);
   }
-
-  HAL_ETH_ReleaseTxPacket(&heth);
 
   return errval;
 }

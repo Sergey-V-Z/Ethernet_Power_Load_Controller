@@ -35,7 +35,7 @@
 extern "C" {
 #endif
 
-uint16_t  usMBCRC16( uint8_t * pucFrame, uint16_t usLen );
+//uint16_t usMBCRC16( uint8_t *pucFrame, uint16_t usLen );
 
 #ifdef __cplusplus
 }

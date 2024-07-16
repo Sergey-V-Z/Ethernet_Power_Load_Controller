@@ -1,8 +1,8 @@
 Board Information Report
 Filename     : D:\Radio\Jobe\Ethernet_Power_Load_Controller\PCB\driverPCB\DriverPCB.PcbDoc
-Date         : 21.09.2023
-Time         : 14:20:19
-Time Elapsed : 00:00:01
+Date         : 16.07.2024
+Time         : 12:58:35
+Time Elapsed : 00:00:00
 
 Pad Solder Mask, Count
     0.06mm, 56

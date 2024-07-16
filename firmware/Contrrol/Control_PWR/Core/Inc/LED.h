@@ -7,7 +7,7 @@ enum class status{ON, OFF};
 // CLASS: led
 //
 // DESCRIPTION:
-//  Класс для работы светодиода
+//  пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 //
 // CREATED: 16.12.2020, by Sergey
 //
@@ -37,6 +37,6 @@ private:
  status StateLED = status::OFF;
  status StatusLED = status::OFF;
  
- GPIO_TypeDef* GPIOx;
- uint16_t GPIO_Pin;
+ GPIO_TypeDef* GPIOx{};
+ uint16_t GPIO_Pin{};
 };

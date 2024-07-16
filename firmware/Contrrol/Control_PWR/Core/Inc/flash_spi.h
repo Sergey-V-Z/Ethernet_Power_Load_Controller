@@ -138,15 +138,15 @@ class flash
     void        W25qxx_WriteEnable();
     void        W25qxx_ReadUniqID();
     void		W25qxx_Delay(uint32_t delay);
-    uint32_t StartAddres;
+    uint32_t StartAddres{};
 
-    SPI_HandleTypeDef *hspi;
+    SPI_HandleTypeDef *hspi{};
     pins_spi_t ChipSelect;
     pins_spi_t WriteProtect; 
     pins_spi_t Hold;
-    HAL_StatusTypeDef lastStatusSPI;
+    HAL_StatusTypeDef lastStatusSPI{};
     w25qxx_t w25qxx;
-    bool UsedInOS;
+    bool UsedInOS{};
   };
 
 

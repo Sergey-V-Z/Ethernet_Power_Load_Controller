@@ -31,6 +31,9 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "cJSON.h"
+#include <stdarg.h>
+#include <string.h>
 #include "stdio.h"
 /* USER CODE END Includes */
 
@@ -41,6 +44,9 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
+extern UART_HandleTypeDef huart6;
+extern DMA_HandleTypeDef hdma_usart6_rx;
+extern DMA_HandleTypeDef hdma_usart6_tx;
 
 /* USER CODE END EC */
 
@@ -51,6 +57,19 @@ extern "C" {
 #define START_ADR_I2C 1
 #define MAX_ADR_DEV 16 // 16 with 0
 #define MAX_CH_NAME MAX_ADR_DEV * 3 // 48
+
+#define ARRAY_LEN(x)            (sizeof(x) / sizeof((x)[0]))
+
+#define DBG_PORT huart6
+#define LOG_TX_BUF_SIZE 2048
+
+#define CURENT_VERSION 46
+#define ID_CTRL 1
+#define NAME "pwr controller"
+#define LWIP_DHCP 1
+
+#define UART6_RX_LENGTH 512
+#define message_RX_LENGTH 512
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
@@ -65,6 +84,10 @@ void cleanAll_i2c_dev();
 uint8_t ReadStraps();
 void finishedBlink();
 void timoutBlink();
+
+uint16_t usMBCRC16(uint8_t *pucFrame, uint16_t usLen);
+
+void STM_LOG(const char* format, ...);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
@@ -147,6 +170,7 @@ typedef struct
 typedef struct
 {
 	DEV_t devices[MAX_ADR_DEV];
+	uint8_t devices_depth;
 	uint8_t	MAC[6];
 	uint8_t isON_from_settings;
 	uint8_t IP_end_from_settings;
