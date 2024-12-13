@@ -39,7 +39,7 @@ ENTRY(Reset_Handler)
 /* Highest address of the user mode stack */
 _estack = ORIGIN(RAM) + LENGTH(RAM); /* end of "RAM" Ram type memory */
 
-_Min_Heap_Size = 0x4000; /* required amount of heap */
+_Min_Heap_Size = 0x6000; /* required amount of heap */
 _Min_Stack_Size = 0x4000; /* required amount of stack */
 
 /* Memories definition */
@@ -160,6 +160,13 @@ SECTIONS
   */
   .ccmram :
   {
+    . = ALIGN(8);
+    . = . + _Min_Heap_Size;
+    . = ALIGN(8);
+  } >CCMRAM
+  
+  .ccmram :
+  {
     . = ALIGN(4);
     _sccmram = .;       /* create a global symbol at ccmram start */
     *(.ccmram)
@@ -167,7 +174,7 @@ SECTIONS
 
     . = ALIGN(4);
     _eccmram = .;       /* create a global symbol at ccmram end */
-  } >CCMRAM AT> FLASH
+  } >CCMRAM
 
   /* Uninitialized data section into "RAM" Ram type memory */
   . = ALIGN(4);
@@ -191,7 +198,7 @@ SECTIONS
     . = ALIGN(8);
     PROVIDE ( end = . );
     PROVIDE ( _end = . );
-    . = . + _Min_Heap_Size;
+    /*. = . + _Min_Heap_Size;*/
     . = . + _Min_Stack_Size;
     . = ALIGN(8);
   } >RAM

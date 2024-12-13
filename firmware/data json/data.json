@@ -2,7 +2,8 @@ type_data : 1 установки для IP
 			2 настройки каналов
 			3 комманды
 			4 получитьвсе настройки
-
+			5 установить настройки моста
+			6 получить настройки моста
 	
 Обект с настройками каналов
 {
@@ -161,4 +162,32 @@ enum
 		"id_cmd": 5,
 	}
 	
+}
+
+// настройки моста
+//0-RTU 1-stream
+{
+	"id": 1,
+	"name_device": "pwr controller",
+	"type_data": 5,
+	"obj" : {
+		"mode": 0, 
+		"setMode": true,
+		"port": 502,
+		"setPort": true,
+		"bod": 115200,
+		"setbod": true
+	}
+}
+
+//0-RTU 1-stream
+{
+	"id": 1,
+	"name_device": "pwr controller",
+	"type_data": 6,
+	"obj" : {
+		"mode": 0,
+		"port": 502,
+		"bod": 115200,
+	}
 }

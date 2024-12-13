@@ -2,45 +2,6 @@
 FileName = DriverPCB.GBR
 AutoAperture = True
 *************************************************************
-Generating : Layer 3
-      File : DriverPCB.G2
-
-    Adding Layer      : Layer 3
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D14
-    D16
-    D59
-    D61
-    D63
-    D64
-    D65
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : DriverPCB.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-    D17
-    D18
-*************************************************************
-
-*************************************************************
 Generating : Top Layer
       File : DriverPCB.GTL
 
@@ -83,23 +44,19 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Overlay
-      File : DriverPCB.GBO
+Generating : Keep-Out Layer
+      File : DriverPCB.GKO
 
-    Adding Layer      : Bottom Overlay
+    Adding Layer      : Keep-Out Layer
 
 
 Used DCodes :
-    D10
-    D12
-    D15
+    D16
 *************************************************************
 
 *************************************************************
-Generating : Bottom Paste
-      File : DriverPCB.GBP
-
-    Adding Layer      : Bottom Paste
+Generating : Bottom Layer
+      File : DriverPCB.GBL
 
     Adding Layer      : Bottom Layer
 
@@ -107,8 +64,20 @@ Generating : Bottom Paste
 
 
 Used DCodes :
+    D12
+    D14
+    D16
     D19
     D20
+    D56
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
     D66
     D67
 *************************************************************
@@ -136,46 +105,22 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Board
-      File : DriverPCB.GM5
+Generating : Top Overlay
+      File : DriverPCB.GTO
 
-    Adding Layer      : Board
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Keep-Out Layer
-      File : DriverPCB.GKO
-
-    Adding Layer      : Keep-Out Layer
+    Adding Layer      : Top Overlay
 
 
 Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
     D16
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : DriverPCB.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D34
-    D35
-    D49
-    D50
-    D51
-    D52
-    D68
-    D69
+    D17
+    D18
 *************************************************************
 
 *************************************************************
@@ -212,10 +157,32 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Layer
-      File : DriverPCB.GBL
+Generating : Bottom Solder
+      File : DriverPCB.GBS
+
+    Adding Layer      : Bottom Solder
 
     Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D34
+    D35
+    D49
+    D50
+    D51
+    D52
+    D68
+    D69
+*************************************************************
+
+*************************************************************
+Generating : Layer 3
+      File : DriverPCB.G2
+
+    Adding Layer      : Layer 3
 
     Adding Layer      : Multi-Layer
 
@@ -224,19 +191,11 @@ Used DCodes :
     D12
     D14
     D16
-    D19
-    D20
-    D56
-    D58
     D59
-    D60
     D61
-    D62
     D63
     D64
     D65
-    D66
-    D67
 *************************************************************
 
 *************************************************************
@@ -266,5 +225,46 @@ Used DCodes :
     D31
     D32
     D33
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : DriverPCB.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D12
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : DriverPCB.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D19
+    D20
+    D66
+    D67
+*************************************************************
+
+*************************************************************
+Generating : Board
+      File : DriverPCB.GM5
+
+    Adding Layer      : Board
+
+
+Used DCodes :
 *************************************************************
 

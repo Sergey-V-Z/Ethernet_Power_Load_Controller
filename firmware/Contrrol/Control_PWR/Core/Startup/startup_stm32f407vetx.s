@@ -91,6 +91,17 @@ LoopFillZerobss:
   cmp r2, r4
   bcc FillZerobss
 
+/* Zero fill the CCM segment. */
+ldr  r2, =_sccmram
+FillZeroCCM:
+  movs  r3, #0
+  str  r3, [r2], #4
+
+LoopFillZeroCCM:
+  ldr  r3, = _eccmram
+  cmp  r2, r3
+  bcc  FillZeroCCM
+
 /* Call the clock system initialization function.*/
   bl  SystemInit   
 /* Call static constructors */

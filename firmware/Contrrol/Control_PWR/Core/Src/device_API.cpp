@@ -200,6 +200,7 @@ string Сommand_execution(string in_str){
 			switch (arr_cmd[i].cmd) {
 			case 1: // Delet dev
 				if(arr_cmd[i].data_in1 == 0){
+					// Проверить входные данные
 					setRange_i2c_dev(arr_cmd[i].addres_var, arr_cmd[i].data_in);
 					mem_spi.W25qxx_EraseSector(0);
 					osDelay(5);
@@ -367,6 +368,21 @@ string Сommand_execution(string in_str){
 					}else{
 						arr_cmd[i].err = "NULL ptr dev";
 					}
+					break;
+				case 18: // MAC
+					if (arr_cmd[i].addres_var) {
+						// write
+						if (arr_cmd[i].data_in) {
+							bridge_sett.mode_rs485 = (mode_bridge_t) arr_cmd[i].data_in;
+						}
+
+					} else {
+						//read
+						arr_cmd[i].data_out = (uint32_t) bridge_sett.mode_rs485;
+						arr_cmd[i].need_resp = true;
+					}
+
+					arr_cmd[i].err = "OK";
 					break;
 				default:
 					arr_cmd[i].err = "Command does not exist";

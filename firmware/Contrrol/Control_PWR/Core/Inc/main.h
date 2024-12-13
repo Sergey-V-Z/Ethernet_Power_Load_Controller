@@ -47,12 +47,12 @@ extern "C" {
 extern UART_HandleTypeDef huart6;
 extern DMA_HandleTypeDef hdma_usart6_rx;
 extern DMA_HandleTypeDef hdma_usart6_tx;
-
+extern SPI_HandleTypeDef hspi3;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-#define ID_STRING " Controll LED ETH ver1.3 29.08.23"
+#define ID_STRING " Controll ver1.3"
 
 #define START_ADR_I2C 1
 #define MAX_ADR_DEV 16 // 16 with 0
@@ -61,7 +61,7 @@ extern DMA_HandleTypeDef hdma_usart6_tx;
 #define ARRAY_LEN(x)            (sizeof(x) / sizeof((x)[0]))
 
 #define DBG_PORT huart6
-#define LOG_TX_BUF_SIZE 2048
+#define LOG_TX_BUF_SIZE 1024*4
 
 #define CURENT_VERSION 46
 #define ID_CTRL 1
@@ -70,6 +70,13 @@ extern DMA_HandleTypeDef hdma_usart6_tx;
 
 #define UART6_RX_LENGTH 512
 #define message_RX_LENGTH 512
+
+#define NVS_KEY_BRIDGE "br"  // Вместо "bridge"
+#define LOG_ERR "Err: "      // Вместо "Error: "
+#define LOG_OK "OK"          // Вместо "Success" или "OK: "
+
+// NVS key
+
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
@@ -167,6 +174,7 @@ typedef struct
 	uint8_t 	gateway[4];// = {192, 168, 0, 1};
 }setIP_t;
 
+#pragma pack(push, 1)
 typedef struct
 {
 	DEV_t devices[MAX_ADR_DEV];
@@ -179,6 +187,51 @@ typedef struct
 	uint8_t version;
 
 }settings_t;
+#pragma pack(pop)
+
+typedef enum {
+	RTU = 0,
+	STREAMER = 1,
+}mode_bridge_t;
+
+typedef struct
+{
+	mode_bridge_t mode_rs485;
+	uint16_t port;
+	UART_HandleTypeDef *RS485;
+	uint32_t reserv1;
+	uint32_t reserv2;
+	uint32_t reserv3;
+	uint32_t reserv4;
+	uint32_t reserv5;
+
+}set_bridge_t;
+
+// Структура заголовка ModbusTCP
+typedef struct {
+    uint16_t transaction_id;
+    uint16_t protocol_id;
+    uint16_t length;
+    uint8_t unit_id;
+} ModbusTCPHeader;
+
+extern set_bridge_t bridge_sett;
+
+// Расчёт CRC16 для ModbusRTU
+uint16_t calculate_crc16(uint8_t *buffer, int length);
+
+// Проверка CRC входящего RTU пакета
+uint8_t verify_rtu_crc(uint8_t *rtu_data, int rtu_length);
+
+// Преобразование ModbusTCP в ModbusRTU
+int tcp_to_rtu(uint8_t *tcp_data, int tcp_length, uint8_t *rtu_data, uint16_t *transaction_id);
+
+// Преобразование ModbusRTU в ModbusTCP
+int rtu_to_tcp(uint8_t *rtu_data, int rtu_length, uint8_t *tcp_data, uint16_t transaction_id);
+
+// Вспомогательная функция для вывода содержимого пакета
+void print_packet(uint8_t *data, int length, const char *prefix);
+
 
 /* USER CODE END Private defines */
 

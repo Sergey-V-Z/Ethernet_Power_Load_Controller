@@ -49,7 +49,7 @@ uint8_t	flash :: W25qxx_Spi(uint8_t Data)
    uint8_t	ret;
    
    HAL_SPI_TransmitReceive(hspi, &Data, &ret, 1, 100); 
-   
+   // проверить возврат из функции
    return ret;
 }
 

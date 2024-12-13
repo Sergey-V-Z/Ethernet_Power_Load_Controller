@@ -28,6 +28,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "flash_spi.h"
+#include "settings.h"
 #include "LED.h"
 #include "lwip.h"
 using namespace std;
@@ -58,10 +59,13 @@ using namespace std;
 /* USER CODE BEGIN Variables */
 
 extern settings_t settings;
+extern FlashNVS* nvs;
 extern chName_t NameCH[MAX_CH_NAME];
 uint16_t sensBuff[8] = {0};
 uint8_t sensState = 255; // битовое поле
 bool rx_end = 1;
+
+uint16_t transaction_id;
 
 uint32_t freqSens = HAL_RCC_GetHCLKFreq()/30000u;
 uint32_t pwmSens;
@@ -76,11 +80,12 @@ extern led LED_IPadr;
 extern led LED_error;
 extern led LED_OSstart;
 
-void actoin_ip(cJSON *obj, bool save);
+void action_ip(cJSON *obj, bool save);
 void actoin_ch_set(cJSON *obj);
 void actoin_cmd(cJSON *obj);
 void actoin_settings_data(cJSON *obj);
-
+void action_bridge(cJSON *obj, bool save);
+void action_bridge_data(cJSON *obj);
 //структуры для netcon
 extern struct netif gnetif;
 
@@ -97,7 +102,7 @@ uint16_t Size_message = 0;
 uint16_t Start_index = 0;
 
 //TCP for ModBUS
-uint8_t         input_tcp_data[256] = {0};
+uint8_t         rtu_data[256] = {0};
 uint8_t 		response[260] = {0};
 uint8_t 		Modbut_to_TCP[260] = {0};
 uint16_t		SizeInModBus = 0;
@@ -337,16 +342,17 @@ void mainTask(void const * argument)
 
 							settings.devices[var].TypePCB = (PCBType)RX_buff[22];
 							settings.devices[var].AddrFromDev = RX_buff[21];
+							osDelay(10);
 							break;
 						}else{
-							osDelay(1);
+							osDelay(10);
 						}
 
 					}
 				}
-
+				osDelay(10);
 			}
-			osDelay(1);
+			osDelay(10);
 		}
 
 		//osDelay(10);
@@ -514,8 +520,8 @@ void mbrtuTask(void const * argument)
   /* USER CODE BEGIN mbrtuTask */
 	HAL_StatusTypeDef status1;
 
-	status1 = HAL_UARTEx_ReceiveToIdle_IT(&huart2, response, 128);// Read data
-    uint16_t usCRC16;
+	status1 = HAL_UARTEx_ReceiveToIdle_IT(bridge_sett.RS485, response, 256);// Read data
+    //uint16_t usCRC16;
 	/* Infinite loop */
 	for(;;)
 	{
@@ -524,31 +530,40 @@ void mbrtuTask(void const * argument)
 		osSemaphoreWait(Resive_USARTHandle,osWaitForever);
 		// если соеденение все еще установленно
 		if(newconnMB->type == netconn_type::NETCONN_TCP){
-			// проверяем crc
-			usCRC16 = usMBCRC16(response, SizeInModBus-2);
-			if(response[SizeInModBus-2] != ( uint8_t )( usCRC16 & 0xFF )){
-				continue;
-			}
-			if(response[SizeInModBus-1] != ( uint8_t )( usCRC16 >> 8 )){
-				continue;
-			}
-			// собираем сообщение
-			Modbut_to_TCP[0] = 0;
-			Modbut_to_TCP[1] = 0;
-			Modbut_to_TCP[2] = 0;
-			Modbut_to_TCP[3] = 0;
-			Modbut_to_TCP[4] = (uint8_t) ((SizeInModBus-2) >> 8);
-			Modbut_to_TCP[5] = (uint8_t) ((SizeInModBus-2) & 0xFF);
 
-			memcpy(&Modbut_to_TCP[6], response, SizeInModBus-2);
+			switch (bridge_sett.mode_rs485) {
+			case RTU:
+				{
+					int tcp_length = rtu_to_tcp(response, SizeInModBus, Modbut_to_TCP, transaction_id);
+					if (tcp_length > 0) {
+						print_packet(Modbut_to_TCP, tcp_length, "Converted back to TCP");
+					} else if (tcp_length == -2) {
+						STM_LOG(LOG_ERR "RTU to TCP failed - CRC\n");
+					} else {
+						STM_LOG(LOG_ERR "RTU to TCP failed - packet length\n");
+					}
+					netconn_write(newconnMB, Modbut_to_TCP, tcp_length,
+							NETCONN_COPY);
+					break;
+				}
+			case STREAMER:
+				{
+					netconn_write(newconnMB, response, SizeInModBus, NETCONN_COPY);
+					break;
+				}
+			default:
+				{
+					STM_LOG(LOG_ERR "Unknown mode");
+					break;
+				}
+			}
 
-			netconn_write(newconnMB, Modbut_to_TCP, 4+(SizeInModBus), NETCONN_COPY);
 			SizeInModBus = 0;
 		}else{
 			SizeInModBus = 0;
 		}
 
-		//osDelay(1000);
+		osDelay(1);
 	}
   /* USER CODE END mbrtuTask */
 }
@@ -571,8 +586,8 @@ void mbethTask(void const * argument)
 	struct netbuf 	*buf = &buffer; //bufferized input data
 	void 		*in_data = NULL;
 	uint16_t 		data_size = 0;
-	uint8_t			mb_tcp_head[6];
-	uint16_t usCRC16;
+	//uint8_t			mb_tcp_head[6];
+	//uint16_t usCRC16;
 	//osSemaphoreWait(ModBusEndHandle,1000);
 	//int32_t SemRet = 0;
 	//sizeH = xPortGetMinimumEverFreeHeapSize();
@@ -599,40 +614,78 @@ void mbethTask(void const * argument)
 
 
 								// вырезать данные для модбаса
-								memcpy(mb_tcp_head, in_data, 6); // копируем заголовок
-								memcpy((void*)input_tcp_data, ((uint8_t*)in_data)+6, data_size-6);
+								//memcpy(mb_tcp_head, in_data, 6); // копируем заголовок
+								//memcpy((void*)input_tcp_data, ((uint8_t*)in_data)+6, data_size-6);
 
-								uint16_t len = mb_tcp_head[4] << 8;
-								len |= mb_tcp_head[5];
+								//uint16_t len = mb_tcp_head[4] << 8;
+								//len |= mb_tcp_head[5];
 
 								// проверить пакет на длинну
-								if( len >= 254 ){
-									//netconn_write(newconnMB,response,4,NETCONN_COPY);
-									return;
-								}
+								//if( len >= 254 ){
+									////netconn_write(newconnMB,response,4,NETCONN_COPY);
+									//return;
+								//}
 
 								// расчитать crc
-								usCRC16 = usMBCRC16(input_tcp_data,data_size-6);
-								input_tcp_data[data_size-6] = ( uint8_t )( usCRC16 & 0xFF );
-								input_tcp_data[data_size-5] = ( uint8_t )( usCRC16 >> 8 );
+								//usCRC16 = usMBCRC16(input_tcp_data,data_size-6);
+								//input_tcp_data[data_size-6] = ( uint8_t )( usCRC16 & 0xFF );
+								//input_tcp_data[data_size-5] = ( uint8_t )( usCRC16 >> 8 );
 
-								// отправить
+							    switch (bridge_sett.mode_rs485) {
+									case RTU:
+										{
+											print_packet((uint8_t*)in_data, sizeof(in_data), "Original TCP packet");
 
-								HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_SET); //включить на передачу
-								HAL_UART_Transmit(&huart2, input_tcp_data, data_size-4, 100); //Отправляем данные в USART
-								HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_RESET); //включить на прием
+											int rtu_length = tcp_to_rtu((uint8_t*)in_data, data_size, rtu_data, &transaction_id);
+											if (rtu_length > 0) {
+												print_packet(rtu_data, rtu_length, "Converted RTU packet");
 
+												// Проверяем CRC полученного RTU пакета
+												if (verify_rtu_crc(rtu_data, rtu_length)) {
+													STM_LOG("RTU CRC check: OK\n");
+												} else {
+													STM_LOG("RTU CRC check: FAILED\n");
+												}
+
+												// отправить
+												HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_SET); //включить на передачу
+												//HAL_UART_Transmit(bridge_sett.RS485, input_tcp_data, data_size, 100); //Отправляем данные в USART
+												HAL_UART_Transmit(bridge_sett.RS485, rtu_data, rtu_length, 100); //Отправляем данные в USART
+												HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_RESET); //включить на прием
+
+											} else {
+												printf("Error: TCP to RTU failed\n");
+											}
+
+											break;
+										}
+									case STREAMER:
+										{
+											// отправить
+											HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_SET); //включить на передачу
+											//HAL_UART_Transmit(bridge_sett.RS485, input_tcp_data, data_size, 100); //Отправляем данные в USART
+											HAL_UART_Transmit(bridge_sett.RS485, (uint8_t*)in_data, data_size, 100); //Отправляем данные в USART
+											HAL_GPIO_WritePin(DE_M_GPIO_Port, DE_M_Pin, GPIO_PIN_RESET); //включить на прием
+
+											break;
+										}
+									default:
+										{
+											STM_LOG(LOG_ERR "Unknown mode");
+											break;
+										}
+								}
 							} while (netbuf_next(buf) >= 0);
 							netbuf_delete(buf);
 						}
 						netconn_close(newconnMB);
 						netconn_delete(newconnMB);
 					} else netconn_delete(newconnMB);
-					osDelay(20);
+					osDelay(1);
 				}
 			}
 		}
-		osDelay(1000);
+		osDelay(10);
 	}
   /* USER CODE END mbethTask */
 }
@@ -648,7 +701,7 @@ void uart_Task(void const * argument)
 {
   /* USER CODE BEGIN uart_Task */
 	 /* USER CODE BEGIN uart_Task */
-		//HAL_UART_Receive_DMA(&huart2, UART2_rx, UART2_RX_LENGTH);
+		//HAL_UART_Receive_DMA(bridge_sett.RS485, UART2_rx, UART2_RX_LENGTH);
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart6, UART6_rx, UART6_RX_LENGTH);
 		__HAL_DMA_DISABLE_IT(&hdma_usart6_rx, DMA_IT_HT);
 		//__HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_TC);
@@ -657,13 +710,13 @@ void uart_Task(void const * argument)
 			// ожидать собщение
 			osMessageGet(rxDataUART2Handle, osWaitForever);
 			//uint32_t message_len = strlen((char*) message_rx);
-			//HAL_UART_Transmit(&huart2, message_rx, message_len, HAL_MAX_DELAY);
+			//HAL_UART_Transmit(bridge_sett.RS485, message_rx, message_len, HAL_MAX_DELAY);
 
 			// парсим  json
 			cJSON *json = cJSON_Parse((char*) message_rx);
 			if (json != NULL) {
 				cJSON *id = cJSON_GetObjectItemCaseSensitive(json, "id");
-				cJSON *name_device = cJSON_GetObjectItemCaseSensitive(json, "name_device");
+				//cJSON *name_device = cJSON_GetObjectItemCaseSensitive(json, "name_device");
 				cJSON *type_data = cJSON_GetObjectItemCaseSensitive(json, "type_data");
 				cJSON *save_settings = cJSON_GetObjectItemCaseSensitive(json, "save_settings");
 				cJSON *obj = cJSON_GetObjectItemCaseSensitive(json, "obj");
@@ -679,7 +732,7 @@ void uart_Task(void const * argument)
 				if (cJSON_IsNumber(type_data)) {
 					switch (type_data->valueint) {
 					case 1: // ip settings
-						actoin_ip(obj, save_set);
+						action_ip(obj, save_set);
 						break;
 					case 2: // chanels settings
 						actoin_ch_set(obj);
@@ -689,6 +742,14 @@ void uart_Task(void const * argument)
 						break;
 					case 4:
 						actoin_settings_data(obj);
+						//STM_LOG("Empty type_data num");
+						break;
+					case 5:
+						action_bridge(obj, save_set);
+						//STM_LOG("Empty type_data num");
+						break;
+					case 6:
+						action_bridge_data(obj);
 						//STM_LOG("Empty type_data num");
 						break;
 					default:
@@ -706,14 +767,14 @@ void uart_Task(void const * argument)
 		} else {
 			STM_LOG("Invalid JSON");
 		}
-			osDelay(1);
+			osDelay(10);
 		}
   /* USER CODE END uart_Task */
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-void actoin_ip(cJSON *obj, bool save)
+void action_ip(cJSON *obj, bool save)
 {
 	cJSON *j_IP = cJSON_GetObjectItemCaseSensitive(obj, "IP");
 	cJSON *j_setIP = cJSON_GetObjectItemCaseSensitive(obj, "setIP");
@@ -838,10 +899,13 @@ void actoin_ip(cJSON *obj, bool save)
 		STM_LOG("Settings set successful");
 		// сохранение
 		if (save) {
-			STM_LOG("Save settings");
-			mem_spi.W25qxx_EraseSector(0);
-			osDelay(5);
-			mem_spi.Write(settings);
+		    STM_LOG("Save settings");
+		    if (!saveSettingsToNVS(nvs, settings)) {
+		        STM_LOG(LOG_ERR "Не удалось сохранить сетевые настройки");
+		        // Возможно здесь нужна дополнительная обработка ошибки
+		    } else {
+		        STM_LOG(LOG_OK " Сетевые настройки сохранены");
+		    }
 		}
 
 		// отправить ответ на хост
@@ -854,6 +918,7 @@ void actoin_ip(cJSON *obj, bool save)
 
 void actoin_ch_set(cJSON *obj)
 {
+	STM_LOG("Auto set channels start");
 	if(settings.devices_depth != 0)
 	{
 		cJSON *j_out_obj = cJSON_CreateObject();
@@ -878,8 +943,9 @@ void actoin_ch_set(cJSON *obj)
 		STM_LOG(out_str);
 
 		free(out_str);
-		cJSON_Delete(j_arr_obj);
+		//cJSON_Delete(j_arr_obj);
 		cJSON_Delete(j_out_obj);
+		STM_LOG("Auto set channels OK");
 	}
 	else
 	{
@@ -903,10 +969,11 @@ void actoin_cmd(cJSON *obj)
 		int count = cJSON_GetNumberValue(Count_dev);
 
 		setRange_i2c_dev(addres, count);
-		mem_spi.W25qxx_EraseSector(0);
-		osDelay(5);
-		mem_spi.Write(settings);
-
+	    if (!saveSettingsToNVS(nvs, settings)) {
+	        STM_LOG(LOG_ERR "save setting");
+	    } else {
+	        STM_LOG(LOG_OK " save setting");
+	    }
 		STM_LOG("auto set end");
 		break;
 	}
@@ -939,8 +1006,8 @@ void actoin_cmd(cJSON *obj)
 		break;
 	}
 	case 3:{ // del device
-		cJSON *Num = cJSON_GetObjectItemCaseSensitive(obj, "Num");
-		int num = cJSON_GetNumberValue(Num);
+		//cJSON *Num = cJSON_GetObjectItemCaseSensitive(obj, "Num");
+		//int num = cJSON_GetNumberValue(Num);
 
 		//del_Name_dev(num);
 		STM_LOG("err empty cmd");
@@ -1073,6 +1140,90 @@ void actoin_settings_data(cJSON *obj)
 	cJSON_Delete(j_all_settings_obj);
 
 }
+// настройки моста
+void action_bridge(cJSON *obj, bool save)
+{
+    cJSON *j_mode = cJSON_GetObjectItemCaseSensitive(obj, "mode");
+    cJSON *j_setMode = cJSON_GetObjectItemCaseSensitive(obj, "setMode");
+    cJSON *j_port = cJSON_GetObjectItemCaseSensitive(obj, "port");
+    cJSON *j_setPort = cJSON_GetObjectItemCaseSensitive(obj, "setPort");
+
+    try {
+        bool settingsChanged = false;
+
+        // Установка режима работы моста
+        if ((j_setMode != NULL) && cJSON_IsTrue(j_setMode)) {
+            if (j_mode != NULL && cJSON_IsNumber(j_mode)) {
+                mode_bridge_t newMode = static_cast<mode_bridge_t>(j_mode->valueint);
+                if (bridge_sett.mode_rs485 != newMode) {
+                    bridge_sett.mode_rs485 = newMode;
+                    settingsChanged = true;
+                }
+            }
+        }
+
+        // Установка порта
+        if ((j_setPort != NULL) && cJSON_IsTrue(j_setPort)) {
+            if (j_port != NULL && cJSON_IsNumber(j_port)) {
+                uint16_t newPort = static_cast<uint16_t>(j_port->valueint);
+                if (bridge_sett.port != newPort) {
+                    bridge_sett.port = newPort;
+                    settingsChanged = true;
+                }
+            }
+        }
+
+        // Если были изменения и требуется сохранение
+        if (settingsChanged && save) {
+            if (writeBridgeSettings(nvs, bridge_sett)) {
+                STM_LOG(LOG_OK " Bridge settings saved. Mode: %s, Port: %u",
+                    getModeStr(bridge_sett.mode_rs485),
+                    bridge_sett.port);
+            } else {
+                STM_LOG(LOG_ERR "Failed to save bridge settings");
+            }
+        }
+
+    } catch (...) {
+        STM_LOG(LOG_ERR "Error in bridge parameters");
+    }
+}
+
+void action_bridge_data(cJSON *obj)
+{
+    cJSON *j_all_settings_obj = cJSON_CreateObject();
+    cJSON *obj_bridge = cJSON_CreateObject();
+
+    // Основная информация
+    cJSON_AddNumberToObject(j_all_settings_obj, "id", ID_CTRL);
+    cJSON_AddStringToObject(j_all_settings_obj, "name_device", NAME);
+    cJSON_AddNumberToObject(j_all_settings_obj, "type_data", 6);  // �?спользуем 6 для получения настроек моста
+
+    // Настройки моста
+    cJSON_AddNumberToObject(obj_bridge, "mode", bridge_sett.mode_rs485);
+    cJSON_AddNumberToObject(obj_bridge, "port", bridge_sett.port);
+    cJSON_AddNumberToObject(obj_bridge, "bod", bridge_sett.RS485->Init.BaudRate);
+
+    // Если нужно добавить резервные поля
+    //cJSON_AddNumberToObject(obj_bridge, "reserv1", bridge_sett.reserv1);
+    //cJSON_AddNumberToObject(obj_bridge, "reserv2", bridge_sett.reserv2);
+    //cJSON_AddNumberToObject(obj_bridge, "reserv3", bridge_sett.reserv3);
+    //cJSON_AddNumberToObject(obj_bridge, "reserv4", bridge_sett.reserv4);
+    //cJSON_AddNumberToObject(obj_bridge, "reserv5", bridge_sett.reserv5);
+
+    // Добавляем настройки моста в основной объект
+    cJSON_AddItemToObject(j_all_settings_obj, "obj", obj_bridge);
+
+    // Преобразуем в строку и отправляем
+    char *str_to_host = cJSON_Print(j_all_settings_obj);
+
+    if (str_to_host) {
+        STM_LOG("%s", str_to_host);
+        cJSON_free(str_to_host);
+    }
+
+    cJSON_Delete(j_all_settings_obj);
+}
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
@@ -1080,7 +1231,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 	if(huart->Instance == USART1){
 
 	}
-	if(huart->Instance == USART2){
+	if(huart->Instance == bridge_sett.RS485->Instance){
 
 	}
 
@@ -1093,7 +1244,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		HAL_UART_DMAStop(huart);
 		rx_end = 1;
 	}
-	if(huart->Instance == USART2){
+	if(huart->Instance == bridge_sett.RS485->Instance){
 
 
 	}
@@ -1102,9 +1253,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-	if(huart->Instance == USART2){
+	if(huart->Instance == bridge_sett.RS485->Instance){
 		SizeInModBus = Size;
-		HAL_UARTEx_ReceiveToIdle_IT(&huart2, response, 128);// Read data
+		HAL_UARTEx_ReceiveToIdle_IT(bridge_sett.RS485, response, 256);// Read data
 		osSemaphoreRelease(Resive_USARTHandle);
 	}
 	if (huart->Instance == USART6) {
